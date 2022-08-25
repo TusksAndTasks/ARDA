@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .button-primary {
+        min-width: 150px;
+        max-width: 250px;
+        z-index: 1;
+        -webkit-backface-visibility: hidden;
+        -moz-osx-font-smoothing: grayscale;
+        -webkit-transition: color 0.3s;
+        transition: color 0.3s;
+    }
+    .button-primary::after {
+        content: '';
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 100%;
+        left: 0;
+        z-index: -1;
+        -webkit-transition: -webkit-transform 0.4s;
+        transition: transform 0.4s;
+        -webkit-transition-timing-function: cubic-bezier(.15,1.82,.7,.4);;
+        transition-timing-function: cubic-bezier(.15,1.82,.7,.4);;
+    }
+
+    .button-primary::after {
+        background: white;
+    }
+    .button-primary:hover::after {
+        -webkit-transform: translate3d(0, -100%, 0);
+        transform: translate3d(0, -100%, 0);
+    }
+    .button-primary:hover::after {
+        -webkit-transition-delay: 0.175s;
+        transition-delay: 0.175s;
+    }
+}
