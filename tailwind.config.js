@@ -2,7 +2,11 @@
 module.exports = {
   content: ["./src/**/*.{ts,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        'general': ['Roboto-Regular', 'serif']
+      }
+    },
   },
   plugins: [],
 }

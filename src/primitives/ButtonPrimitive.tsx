@@ -22,8 +22,8 @@ export default React.memo(ButtonPrimitive);
 
 const ButtonStylesMap = {
   [ButtonModes.PRIMARY]: {
-    button: 'flex flex-wrap justify-center py-20 text-white  my-5',
+    button: 'flex flex-wrap justify-center py-10 text-white  my-5',
     textSpan:
-      'button-primary border-white px-5 py-3 bg-transparent hover:text-black relative block focus:outline-none border-2 border-solid text-center overflow-hidden',
+      'button-primary border-white px-5 py-0 bg-transparent hover:text-black relative block focus:outline-none border-2 border-solid text-center overflow-hidden',
   },
 };
