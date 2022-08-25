@@ -5,6 +5,12 @@ module.exports = {
     extend: {
       fontFamily: {
         'general': ['Roboto-Regular', 'serif']
+      },
+      colors: {
+        gold: '#FBBC32',
+        bronze: '#DC7D1C',
+        lightgold: '#F6E5CC',
+        lightbronze: '#C08741'
       }
     },
   },
