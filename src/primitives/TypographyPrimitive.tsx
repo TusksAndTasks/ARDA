@@ -6,8 +6,10 @@ interface ITypographyProps {
   children?: React.ReactNode;
 }
 
-enum TypographyModes {
+export enum TypographyModes {
   PRIMARY = 'PRIMARY',
+  TITULAR = 'TITULAR',
+  LISTLIKE = 'LISTLIKE',
 }
 
 function TypographyPrimitive({
@@ -21,5 +23,7 @@ function TypographyPrimitive({
 export default React.memo(TypographyPrimitive);
 
 const TypographyStyleMap = {
-  [TypographyModes.PRIMARY]: 'font-general text-base tracking-widest',
+  [TypographyModes.PRIMARY]: 'font-general text-base tracking-normal pb-5',
+  [TypographyModes.LISTLIKE]: 'font-general text-lg tracking-normal text-start',
+  [TypographyModes.TITULAR]: 'font-titular text-5xl tracking-wide pb-10',
 };

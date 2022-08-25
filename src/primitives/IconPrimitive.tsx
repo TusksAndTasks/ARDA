@@ -18,11 +18,11 @@ function IconPrimitive({
   children,
 }: IIconPrimitiveProps) {
   return (
-    <div className={`${bgColor} ${bgSize}`}>
+    <div className={`${bgColor} ${bgSize} flex items-center justify-center`}>
       <svg
         className={`${size} ${color}`}
         viewBox="0 0 24 24"
-        strokeWidth="2"
+        strokeWidth="1.5"
         stroke="currentColor"
         fill="none"
         strokeLinecap="round"
