@@ -180,6 +180,28 @@ function MainPage() {
           </TypographyPrimitive>
         </ButtonPrimitive>
       </SectionPrimitive>
+      <SectionPrimitive>
+        <div className="flex items-center justify-between">
+          <div className="flex-col items-start justify-between">
+            <TypographyPrimitive as="p" mode={TypographyModes.PRIMARYPLUS}>
+              {MainPageData.DonateSection.content.question}
+            </TypographyPrimitive>
+            <TypographyPrimitive as="p" mode={TypographyModes.PRIMARY} color={textColors.GOLD}>
+              {MainPageData.DonateSection.content.answer}
+            </TypographyPrimitive>
+          </div>
+          <ButtonPrimitive
+            color={textColors.LIGHTGOLD}
+            bgColor={bgColors.BLACK}
+            borderColor={borderColors.BLACK}
+            afterColor={afterBgColors.LIGHTGOLD}
+            hoverTextColor={hoverTextColors.GOLD}
+            additionalClasses="relative"
+          >
+            {MainPageData.DonateSection.content.button}
+          </ButtonPrimitive>
+        </div>
+      </SectionPrimitive>
     </div>
   );
 }
