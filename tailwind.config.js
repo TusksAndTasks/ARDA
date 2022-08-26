@@ -27,6 +27,9 @@ module.exports = {
         'light-black': 'rgba(0,0,0,0.3)',
       })
     },
+    dropShadow: {
+      'point-shadow': '5px 0px 0px #000'
+    }
   },
   plugins: [],
 }

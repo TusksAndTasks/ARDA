@@ -152,6 +152,34 @@ function MainPage() {
         </TypographyPrimitive>
         <PartnersList />
       </SectionPrimitive>
+      <SectionPrimitive>
+        <TypographyPrimitive as="h2" mode={TypographyModes.TITULAR}>
+          {MainPageData.ExplanationSection.title}
+        </TypographyPrimitive>
+        <div className="flex justify-between">
+          {MainPageData.ExplanationSection.content.cards.map((card) => (
+            <div key={card.point} className="flex-col items-center justify-center">
+              <TypographyPrimitive as="h3" mode={TypographyModes.CARDPOINT} color={textColors.GOLD}>
+                {card.point}
+              </TypographyPrimitive>
+              <TypographyPrimitive as="p" mode={TypographyModes.PRIMARYPLUS}>
+                {card.text}
+              </TypographyPrimitive>
+            </div>
+          ))}
+        </div>
+        <ButtonPrimitive
+          color={textColors.BRONZE}
+          borderColor={borderColors.BRONZE}
+          afterColor={afterBgColors.GOLD}
+          hoverTextColor={hoverTextColors.BRONZE}
+          additionalClasses="relative"
+        >
+          <TypographyPrimitive mode={TypographyModes.PRIMARYPLUS}>
+            {MainPageData.ExplanationSection.content.button}
+          </TypographyPrimitive>
+        </ButtonPrimitive>
+      </SectionPrimitive>
     </div>
   );
 }
