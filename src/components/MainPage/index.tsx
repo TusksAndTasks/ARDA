@@ -1,5 +1,5 @@
 import TypographyPrimitive, { TypographyModes } from '../../primitives/TypographyPrimitive';
-import React from 'react';
+import React, { useCallback } from 'react';
 import SectionPrimitive from '../../primitives/SectionPrimitive';
 import MainPageData from '../../data/MainPage.json';
 import IconPrimitive from '../../primitives/IconPrimitive';
@@ -16,6 +16,10 @@ import ButtonPrimitive from '../../primitives/ButtonPrimitive';
 import PartnersList from './PartnersList';
 
 function MainPage() {
+  const goToMainSite = useCallback(() => {
+    location.href = 'https://arda.digital/';
+  }, []);
+
   return (
     <div className="container px-10">
       <MainPageSprite className="hidden" />
@@ -174,6 +178,7 @@ function MainPage() {
           afterColor={afterBgColors.GOLD}
           hoverTextColor={hoverTextColors.BRONZE}
           additionalClasses="relative"
+          onClick={goToMainSite}
         >
           <TypographyPrimitive mode={TypographyModes.PRIMARYPLUS}>
             {MainPageData.ExplanationSection.content.button}
@@ -198,7 +203,9 @@ function MainPage() {
             hoverTextColor={hoverTextColors.GOLD}
             additionalClasses="relative"
           >
-            {MainPageData.DonateSection.content.button}
+            <TypographyPrimitive mode={TypographyModes.PRIMARY}>
+              {MainPageData.DonateSection.content.button}
+            </TypographyPrimitive>
           </ButtonPrimitive>
         </div>
       </SectionPrimitive>

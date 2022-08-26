@@ -28,7 +28,7 @@ function PartnersList() {
           className="odd:pb-24"
         />
       ))}
-      <ButtonPrimitive onClick={toggleListMode} additionalClasses="absolute bottom-0">
+      <ButtonPrimitive additionalClasses="absolute bottom-0" onClick={toggleListMode}>
         <TypographyPrimitive mode={TypographyModes.PRIMARYPLUS}>
           {isFullList
             ? MainPageData.PartnersSection.content.buttonOpen

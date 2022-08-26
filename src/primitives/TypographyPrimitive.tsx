@@ -19,7 +19,7 @@ export enum TypographyModes {
 function TypographyPrimitive({
   as = 'span',
   mode = TypographyModes.PRIMARY,
-  color = textColors.BLACK,
+  color,
   children,
 }: ITypographyProps) {
   return React.createElement(as, { className: `${TypographyStyleMap[mode]} ${color}` }, children);
