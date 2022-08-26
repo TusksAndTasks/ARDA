@@ -44,4 +44,8 @@
         -webkit-transition-delay: 0.175s;
         transition-delay: 0.175s;
     }
+
+    .filter-gold{
+     filter: invert(93%) sepia(7%) saturate(6422%) hue-rotate(329deg) brightness(99%) contrast(100%);
+    }
 }

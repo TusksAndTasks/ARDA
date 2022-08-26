@@ -25,11 +25,14 @@ module.exports = {
         'transparent': 'rgba(255,255,255,0)',
         'light-gray': 'rgba(124,124,124,0.3)',
         'light-black': 'rgba(0,0,0,0.3)',
-      })
+      }),
+      filter:{
+        'gold': 'invert(93%) sepia(7%) saturate(6422%) hue-rotate(329deg) brightness(99%) contrast(100%)'
+      }
     },
     dropShadow: {
       'point-shadow': '5px 0px 0px #000'
-    }
+    },
   },
   plugins: [],
 }
