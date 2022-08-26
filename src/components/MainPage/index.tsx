@@ -14,6 +14,7 @@ import {
 import { ReactComponent as MainPageSprite } from '../../data/MainPageSprite.svg';
 import ButtonPrimitive from '../../primitives/ButtonPrimitive';
 import PartnersList from './PartnersList';
+import InputPrimitive from '../../primitives/InputPrimitive';
 
 function MainPage() {
   const goToMainSite = useCallback(() => {
@@ -23,6 +24,7 @@ function MainPage() {
   return (
     <div className="container px-10">
       <MainPageSprite className="hidden" />
+      <InputPrimitive type="checkbox" />
       <SectionPrimitive>
         <TypographyPrimitive as="h1" mode={TypographyModes.TITULAR}>
           {MainPageData.TitularSection.title}

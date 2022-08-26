@@ -34,5 +34,7 @@ module.exports = {
       'point-shadow': '5px 0px 0px #000'
     },
   },
-  plugins: [],
+  plugins: [
+  require('@tailwindcss/forms')
+  ],
 }
