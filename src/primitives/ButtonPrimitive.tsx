@@ -16,6 +16,7 @@ interface IButtonProps {
   hoverTextColor?: hoverTextColors;
   bgColor?: bgColors;
   onClick?: () => void;
+  additionalClasses?: string;
 }
 
 enum ButtonModes {
@@ -31,10 +32,11 @@ function ButtonPrimitive({
   hoverTextColor = hoverTextColors.BLACK,
   children,
   onClick,
+  additionalClasses,
 }: IButtonProps) {
   return (
     <button
-      className={`${ButtonStylesMap[mode].textSpan} ${color} ${afterColor} ${bgColor} ${borderColor} ${hoverTextColor}`}
+      className={`${ButtonStylesMap[mode].textSpan} ${color} ${afterColor} ${bgColor} ${borderColor} ${hoverTextColor} ${additionalClasses}`}
       onClick={onClick}
     >
       {children}
@@ -47,6 +49,6 @@ export default React.memo(ButtonPrimitive);
 const ButtonStylesMap = {
   [ButtonModes.PRIMARY]: {
     textSpan:
-      'button-primary px-5 py-2 relative block focus:outline-none border border-solid text-center overflow-hidden',
+      'button-primary px-5 py-2 block focus:outline-none border border-solid text-center overflow-hidden',
   },
 };

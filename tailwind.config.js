@@ -20,6 +20,12 @@ module.exports = {
       container: {
         center: true,
       },
+      gradientColorStops: theme => ({
+        ...theme('colors'),
+        'transparent': 'rgba(255,255,255,0)',
+        'light-gray': 'rgba(124,124,124,0.3)',
+        'light-black': 'rgba(0,0,0,0.3)',
+      })
     },
   },
   plugins: [],

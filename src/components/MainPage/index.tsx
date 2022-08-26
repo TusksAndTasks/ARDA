@@ -13,6 +13,7 @@ import {
 } from '../../themes/colors';
 import { ReactComponent as MainPageSprite } from '../../data/MainPageSprite.svg';
 import ButtonPrimitive from '../../primitives/ButtonPrimitive';
+import PartnersList from './PartnersList';
 
 function MainPage() {
   return (
@@ -134,34 +135,25 @@ function MainPage() {
             borderColor={borderColors.LIGHTBRONZE}
             afterColor={afterBgColors.LIGHTBRONZE}
             hoverTextColor={hoverTextColors.GOLD}
+            additionalClasses="relative"
           >
-            <TypographyPrimitive mode={TypographyModes.PRIMARYPLUS}>Вступить</TypographyPrimitive>
+            <TypographyPrimitive mode={TypographyModes.PRIMARYPLUS}>
+              {MainPageData.ConditionsSection.closerInfo.button}
+            </TypographyPrimitive>
           </ButtonPrimitive>
           <TypographyPrimitive as="p" mode={TypographyModes.PRIMARY}>
-            Если вы разделяете принципы, и ваша компания подходит по вышеприведенным критериям, то
-            мы будем рады видеть вас среди участников!
+            {MainPageData.ConditionsSection.closerInfo.text}
           </TypographyPrimitive>
         </div>
+      </SectionPrimitive>
+      <SectionPrimitive>
+        <TypographyPrimitive as="h2" mode={TypographyModes.TITULAR}>
+          {MainPageData.PartnersSection.title}
+        </TypographyPrimitive>
+        <PartnersList />
       </SectionPrimitive>
     </div>
   );
 }
 
 export default React.memo(MainPage);
-
-// <div className="bg-amber-300 text-3xl font-bold">
-//   Upper Text
-//   <IconPrimitive
-//     color={textColors.GOLD}
-//     bgColor={bgColors.BLACK}
-//     size={squareSizes.MEDIUM}
-//     bgSize={squareSizes.MEDIUMPLUS}
-//   >
-//     <path stroke="none" d="M0 0h24v24H0z" />
-//     <polyline points="3 17 9 11 13 15 21 7" />
-//     <polyline points="14 7 21 7 21 14" />
-//   </IconPrimitive>
-//   <ButtonPrimitive>
-//     <TypographyPrimitive>ClickMe</TypographyPrimitive>
-//   </ButtonPrimitive>
-// </div>
