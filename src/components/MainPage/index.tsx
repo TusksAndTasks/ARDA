@@ -4,12 +4,20 @@ import SectionPrimitive from '../../primitives/SectionPrimitive';
 import MainPageData from '../../data/MainPage.json';
 import IconPrimitive from '../../primitives/IconPrimitive';
 import { squareSizes } from '../../themes/sizes';
-import { bgColors, textColors } from '../../themes/colors';
-import { MainPageIcons } from '../../data/MainPageIcons';
+import {
+  afterBgColors,
+  bgColors,
+  borderColors,
+  hoverTextColors,
+  textColors,
+} from '../../themes/colors';
+import { ReactComponent as MainPageSprite } from '../../data/MainPageSprite.svg';
+import ButtonPrimitive from '../../primitives/ButtonPrimitive';
 
 function MainPage() {
   return (
     <div className="container px-10">
+      <MainPageSprite className="hidden" />
       <SectionPrimitive>
         <TypographyPrimitive as="h1" mode={TypographyModes.TITULAR}>
           {MainPageData.TitularSection.title}
@@ -38,13 +46,12 @@ function MainPage() {
             key={content.text.slice(0, 5)}
           >
             <IconPrimitive
+              spriteId={content.icon}
               size={squareSizes.MEDIUM}
               bgSize={squareSizes.MEDIUMPLUS}
               color={textColors.BRONZE}
               bgColor={bgColors.LIGHTGOLD}
-            >
-              {MainPageIcons[content.icon as keyof typeof MainPageIcons]}
-            </IconPrimitive>
+            />
             <TypographyPrimitive as="p" mode={TypographyModes.LISTLIKE}>
               {content.text}
             </TypographyPrimitive>
@@ -61,13 +68,12 @@ function MainPage() {
             key={content.text.slice(0, 5)}
           >
             <IconPrimitive
+              spriteId={content.icon}
               size={squareSizes.MEDIUM}
               bgSize={squareSizes.MEDIUMPLUS}
               color={textColors.BRONZE}
               bgColor={bgColors.LIGHTGOLD}
-            >
-              {MainPageIcons[content.icon as keyof typeof MainPageIcons]}
-            </IconPrimitive>
+            />
             <TypographyPrimitive as="p" mode={TypographyModes.LISTLIKE}>
               {content.text}
             </TypographyPrimitive>
@@ -84,18 +90,58 @@ function MainPage() {
             key={content.text.slice(0, 5)}
           >
             <IconPrimitive
+              spriteId={content.icon}
               size={squareSizes.MEDIUM}
               bgSize={squareSizes.MEDIUMPLUS}
               color={textColors.BRONZE}
               bgColor={bgColors.LIGHTGOLD}
-            >
-              {MainPageIcons[content.icon as keyof typeof MainPageIcons]}
-            </IconPrimitive>
+            />
             <TypographyPrimitive as="p" mode={TypographyModes.LISTLIKE}>
               {content.text}
             </TypographyPrimitive>
           </div>
         ))}
+      </SectionPrimitive>
+      <SectionPrimitive>
+        <TypographyPrimitive as="h2" mode={TypographyModes.TITULAR}>
+          {MainPageData.ConditionsSection.title}
+        </TypographyPrimitive>
+        {MainPageData.ConditionsSection.content.map((content) => (
+          <div key={content.text.slice(0, 5)} className="flex-col items-start justify-start">
+            <div className="flex w-5/6 content-center items-center gap-2 text-start">
+              <IconPrimitive
+                spriteId={content.icon}
+                size={squareSizes.MEDIUM}
+                bgSize={squareSizes.MEDIUMPLUS}
+                color={textColors.BRONZE}
+                bgColor={bgColors.LIGHTGOLD}
+              />
+              <TypographyPrimitive as="p" mode={TypographyModes.LISTLIKE}>
+                {content.text}
+              </TypographyPrimitive>
+            </div>
+            <IconPrimitive
+              spriteId="ArrowDown"
+              size={squareSizes.MEDIUM}
+              bgSize={squareSizes.MEDIUMPLUS}
+            ></IconPrimitive>
+          </div>
+        ))}
+        <div className="flex items-center justify-start gap-4">
+          <ButtonPrimitive
+            color={textColors.LIGHTBRONZE}
+            bgColor={bgColors.TRANSPARENT}
+            borderColor={borderColors.LIGHTBRONZE}
+            afterColor={afterBgColors.LIGHTBRONZE}
+            hoverTextColor={hoverTextColors.GOLD}
+          >
+            <TypographyPrimitive mode={TypographyModes.PRIMARYPLUS}>Вступить</TypographyPrimitive>
+          </ButtonPrimitive>
+          <TypographyPrimitive as="p" mode={TypographyModes.PRIMARY}>
+            Если вы разделяете принципы, и ваша компания подходит по вышеприведенным критериям, то
+            мы будем рады видеть вас среди участников!
+          </TypographyPrimitive>
+        </div>
       </SectionPrimitive>
     </div>
   );

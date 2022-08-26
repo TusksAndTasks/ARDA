@@ -1,8 +1,8 @@
 export const MainPageIcons = {
   ProblemsIcon1: (
     <>
-      <path stroke="none" d="M0 0h24v24H0z" />{' '}
-      <path d="M21 14l-3 -3h-7a1 1 0 0 1 -1 -1v-6a1 1 0 0 1 1 -1h9a1 1 0 0 1 1 1v10" />{' '}
+      <path stroke="none" d="M0 0h24v24H0z" />
+      <path d="M21 14l-3 -3h-7a1 1 0 0 1 -1 -1v-6a1 1 0 0 1 1 -1h9a1 1 0 0 1 1 1v10" />
       <path d="M14 15v2a1 1 0 0 1 -1 1h-7l-3 3v-10a1 1 0 0 1 1 -1h2" />
     </>
   ),
@@ -18,9 +18,9 @@ export const MainPageIcons = {
   ),
   ProblemsIcon3: (
     <>
-      <path stroke="none" d="M0 0h24v24H0z" /> <rect x="3" y="3" width="6" height="6" rx="1" />{' '}
-      <rect x="15" y="15" width="6" height="6" rx="1" />{' '}
-      <path d="M21 11v-3a2 2 0 0 0 -2 -2h-6l3 3m0 -6l-3 3" />{' '}
+      <path stroke="none" d="M0 0h24v24H0z" /> <rect x="3" y="3" width="6" height="6" rx="1" />
+      <rect x="15" y="15" width="6" height="6" rx="1" />
+      <path d="M21 11v-3a2 2 0 0 0 -2 -2h-6l3 3m0 -6l-3 3" />
       <path d="M3 13v3a2 2 0 0 0 2 2h6l-3 -3m0 6l3 -3" />
     </>
   ),
@@ -36,13 +36,13 @@ export const MainPageIcons = {
   ),
   MissionIcon1: (
     <>
-      <path stroke="none" d="M0 0h24v24H0z" /> <path d="M3 12h7l-3 -3m0 6l3 -3" />{' '}
+      <path stroke="none" d="M0 0h24v24H0z" /> <path d="M3 12h7l-3 -3m0 6l3 -3" />
       <path d="M21 12h-7l3 -3m0 6l-3 -3" /> <path d="M9 6v-3h6v3" /> <path d="M9 18v3h6v-3" />
     </>
   ),
   MissionIcon2: (
     <>
-      <path stroke="none" d="M0 0h24v24H0z" /> <polyline points="3 7 9 13 13 9 21 17" />{' '}
+      <path stroke="none" d="M0 0h24v24H0z" /> <polyline points="3 7 9 13 13 9 21 17" />
       <polyline points="21 10 21 17 14 17" />
     </>
   ),
@@ -78,8 +78,8 @@ export const MainPageIcons = {
   ),
   ProfitIcon4: (
     <>
-      <path stroke="none" d="M0 0h24v24H0z" /> <circle cx="6" cy="12" r="3" />{' '}
-      <circle cx="18" cy="6" r="3" /> <circle cx="18" cy="18" r="3" />{' '}
+      <path stroke="none" d="M0 0h24v24H0z" /> <circle cx="6" cy="12" r="3" />
+      <circle cx="18" cy="6" r="3" /> <circle cx="18" cy="18" r="3" />
       <line x1="8.7" y1="10.7" x2="15.3" y2="7.3" /> <line x1="8.7" y1="13.3" x2="15.3" y2="16.7" />
     </>
   ),
@@ -94,6 +94,48 @@ export const MainPageIcons = {
           <path d="M21,14h-3.27c-0.77,0-1.35,0.45-1.68,0.92C16.01,14.98,14.69,17,12,17c-1.43,0-3.03-0.64-4.05-2.08 C7.56,14.37,6.95,14,6.27,14L3,14c-1.1,0-2,0.9-2,2v3c0,0.55,0.45,1,1,1h5c0.55,0,1-0.45,1-1v-1.26c1.15,0.8,2.54,1.26,4,1.26 s2.85-0.46,4-1.26V19c0,0.55,0.45,1,1,1h5c0.55,0,1-0.45,1-1v-3C23,14.9,22.1,14,21,14z" />
         </g>
       </g>
+    </>
+  ),
+  ConditionIcon1: (
+    <>
+      <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" /> <circle cx="8.5" cy="7" r="4" />
+      <polyline points="17 11 19 13 23 9" />
+    </>
+  ),
+  ConditionIcon2: (
+    <>
+      <path stroke="none" d="M0 0h24v24H0z" /> <path d="M14 3v4a1 1 0 0 0 1 1h4" />
+      <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" />
+      <line x1="9" y1="7" x2="10" y2="7" /> <line x1="9" y1="13" x2="15" y2="13" />
+      <line x1="13" y1="17" x2="15" y2="17" />
+    </>
+  ),
+  ConditionIcon3: (
+    <>
+      <path stroke="none" d="M0 0h24v24H0z" /> <polyline points="7 8 3 12 7 16" />
+      <polyline points="17 8 21 12 17 16" /> <line x1="14" y1="4" x2="10" y2="20" />
+    </>
+  ),
+  ConditionIcon4: (
+    <>
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"
+      />
+    </>
+  ),
+  ConditionIcon5: (
+    <>
+      <g>
+        <path d="M16.48,10.41c-0.39,0.39-1.04,0.39-1.43,0l-4.47-4.46l-7.05,7.04l-0.66-0.63c-1.17-1.17-1.17-3.07,0-4.24l4.24-4.24 c1.17-1.17,3.07-1.17,4.24,0L16.48,9C16.87,9.39,16.87,10.02,16.48,10.41z M17.18,8.29c0.78,0.78,0.78,2.05,0,2.83 c-1.27,1.27-2.61,0.22-2.83,0l-3.76-3.76l-5.57,5.57c-0.39,0.39-0.39,1.02,0,1.41c0.39,0.39,1.02,0.39,1.42,0l4.62-4.62l0.71,0.71 l-4.62,4.62c-0.39,0.39-0.39,1.02,0,1.41c0.39,0.39,1.02,0.39,1.42,0l4.62-4.62l0.71,0.71l-4.62,4.62c-0.39,0.39-0.39,1.02,0,1.41 c0.39,0.39,1.02,0.39,1.41,0l4.62-4.62l0.71,0.71l-4.62,4.62c-0.39,0.39-0.39,1.02,0,1.41c0.39,0.39,1.02,0.39,1.41,0l8.32-8.34 c1.17-1.17,1.17-3.07,0-4.24l-4.24-4.24c-1.15-1.15-3.01-1.17-4.18-0.06L17.18,8.29z" />
+      </g>
+    </>
+  ),
+  ConditionIcon6: (
+    <>
+      <path d="M20 2H4c-1.11 0-2 .89-2 2v11c0 1.11.89 2 2 2h4v5l4-2 4 2v-5h4c1.11 0 2-.89 2-2V4c0-1.11-.89-2-2-2zm0 13H4v-2h16v2zm0-5H4V4h16v6z" />
     </>
   ),
 };

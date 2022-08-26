@@ -1,8 +1,20 @@
 import React from 'react';
+import {
+  afterBgColors,
+  bgColors,
+  borderColors,
+  hoverTextColors,
+  textColors,
+} from '../themes/colors';
 
 interface IButtonProps {
   mode?: ButtonModes;
   children?: React.ReactNode;
+  color?: textColors;
+  borderColor?: borderColors;
+  afterColor?: afterBgColors;
+  hoverTextColor?: hoverTextColors;
+  bgColor?: bgColors;
   onClick?: () => void;
 }
 
@@ -10,10 +22,22 @@ enum ButtonModes {
   PRIMARY = 'PRIMARY',
 }
 
-function ButtonPrimitive({ mode = ButtonModes.PRIMARY, children, onClick }: IButtonProps) {
+function ButtonPrimitive({
+  mode = ButtonModes.PRIMARY,
+  color = textColors.WHITE,
+  bgColor = bgColors.TRANSPARENT,
+  borderColor = borderColors.WHITE,
+  afterColor = afterBgColors.WHITE,
+  hoverTextColor = hoverTextColors.BLACK,
+  children,
+  onClick,
+}: IButtonProps) {
   return (
-    <button className={ButtonStylesMap[mode].button} onClick={onClick}>
-      <span className={ButtonStylesMap[mode].textSpan}>{children}</span>
+    <button
+      className={`${ButtonStylesMap[mode].textSpan} ${color} ${afterColor} ${bgColor} ${borderColor} ${hoverTextColor}`}
+      onClick={onClick}
+    >
+      {children}
     </button>
   );
 }
@@ -22,8 +46,7 @@ export default React.memo(ButtonPrimitive);
 
 const ButtonStylesMap = {
   [ButtonModes.PRIMARY]: {
-    button: 'flex flex-wrap justify-center py-10 text-white  my-5',
     textSpan:
-      'button-primary border-white px-5 py-0 bg-transparent hover:text-black relative block focus:outline-none border-2 border-solid text-center overflow-hidden',
+      'button-primary px-5 py-2 relative block focus:outline-none border border-solid text-center overflow-hidden',
   },
 };

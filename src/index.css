@@ -36,9 +36,6 @@
         transition-timing-function: cubic-bezier(.15,1.82,.7,.4);;
     }
 
-    .button-primary::after {
-        background: white;
-    }
     .button-primary:hover::after {
         -webkit-transform: translate3d(0, -100%, 0);
         transform: translate3d(0, -100%, 0);
