@@ -1,5 +1,5 @@
 import TypographyPrimitive, { TypographyModes } from '../../primitives/TypographyPrimitive';
-import React, { useCallback } from 'react';
+import React, { useCallback, useState } from 'react';
 import SectionPrimitive from '../../primitives/SectionPrimitive';
 import MainPageData from '../../data/MainPage.json';
 import IconPrimitive from '../../primitives/IconPrimitive';
@@ -14,17 +14,18 @@ import {
 import { ReactComponent as MainPageSprite } from '../../data/MainPageSprite.svg';
 import ButtonPrimitive from '../../primitives/ButtonPrimitive';
 import PartnersList from './PartnersList';
-import InputPrimitive from '../../primitives/InputPrimitive';
+import JoinForm from '../JoinForm';
 
 function MainPage() {
   const goToMainSite = useCallback(() => {
     location.href = 'https://arda.digital/';
   }, []);
 
+  const [isModalOpen, setIsModelOpen] = useState(false);
+
   return (
     <div className="container px-10">
       <MainPageSprite className="hidden" />
-      <InputPrimitive type="checkbox" />
       <SectionPrimitive>
         <TypographyPrimitive as="h1" mode={TypographyModes.TITULAR}>
           {MainPageData.TitularSection.title}
@@ -142,6 +143,9 @@ function MainPage() {
             afterColor={afterBgColors.LIGHTBRONZE}
             hoverTextColor={hoverTextColors.GOLD}
             additionalClasses="relative"
+            onClick={() => {
+              setIsModelOpen(!isModalOpen);
+            }}
           >
             <TypographyPrimitive mode={TypographyModes.PRIMARYPLUS}>
               {MainPageData.ConditionsSection.closerInfo.button}
@@ -211,6 +215,7 @@ function MainPage() {
           </ButtonPrimitive>
         </div>
       </SectionPrimitive>
+      {isModalOpen && <JoinForm />}
     </div>
   );
 }
