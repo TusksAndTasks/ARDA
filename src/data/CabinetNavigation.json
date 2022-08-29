@@ -1,0 +1,45 @@
+{
+  "navigation": [
+    {
+      "to": "",
+      "spriteId": "Summary",
+      "informationPopUp": "after:content-['Оперативная_информация']"
+    },
+    {
+      "to": "redact",
+      "spriteId": "AccountSettings",
+      "informationPopUp": "after:content-['Изменить_профиль']"
+    },
+    {
+      "to": "standards",
+      "spriteId": "Standards",
+      "informationPopUp": "after:content-['Станадрты']"
+    },
+    {
+      "to": "webinars",
+      "spriteId": "Webinars",
+      "informationPopUp": "after:content-['Вебинары']"
+    },
+    {
+      "to": "resources",
+      "spriteId": "ResourceMap",
+      "informationPopUp": "after:content-['Ресурсная_карта']"
+    },
+    {
+      "to": "calendar",
+      "spriteId": "Calendar",
+      "informationPopUp": "after:content-['Календарь']"
+    },
+    {
+      "to": "exchange",
+      "spriteId": "Exchange",
+      "informationPopUp": "after:content-['Обмен_лидами']"
+    },
+    {
+      "to": "additional",
+      "spriteId": "Additional",
+      "informationPopUp": "after:content-['Дополнительная_информация']"
+    }
+
+  ]
+}

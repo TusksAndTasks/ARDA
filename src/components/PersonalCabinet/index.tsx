@@ -8,20 +8,12 @@ import ResourceMap from './ResourceMap';
 import EventCalendar from './EventCalendar';
 import LeadExchange from './LeadExchange';
 import AdditionalInfo from './AdditionalInfo';
+import CabinetNavigation from './CabinetNavigation';
 
 function PersonalCabinet() {
   return (
     <>
-      <div className="flex justify-between">
-        <Link to="">Оперативная информация</Link>
-        <Link to="redact">Изменить профиль</Link>
-        <Link to="standards">Станадрты</Link>
-        <Link to="webinars">Вебинары</Link>
-        <Link to="resources">Ресурсная карта</Link>
-        <Link to="calendar">Календарь</Link>
-        <Link to="exchange">Обмен лидами</Link>
-        <Link to="additional">Дополнительная информация</Link>
-      </div>
+      <CabinetNavigation />
       <Routes>
         <Route path="/" element={<Summary />}></Route>
         <Route path="redact" element={<ProfileSettings />}></Route>
