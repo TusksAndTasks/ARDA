@@ -8,14 +8,18 @@ import LinkPrimitive from '../primitives/LinkPrimitive';
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
-function Header() {
+function Header({
+  setIsPopupOpen,
+}: {
+  setIsPopupOpen: React.Dispatch<React.SetStateAction<boolean>>;
+}) {
   const [isAuthMock] = useState(true);
 
   return (
     <header className="flex items-center justify-between bg-black px-10">
       <HeaderSprite className="hidden" />
       <NavLink to={isAuthMock ? 'cabinet' : ''}>
-        <ButtonPrimitive mode={ButtonModes.SIMPLE}>
+        <ButtonPrimitive mode={ButtonModes.SIMPLE} onClick={() => setIsPopupOpen(true)}>
           <div className="flex items-center">
             <IconPrimitive
               bgColor={bgColors.TRANSPARENT}

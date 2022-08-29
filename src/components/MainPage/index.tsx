@@ -12,16 +12,27 @@ import {
   textColors,
 } from '../../themes/colors';
 import { ReactComponent as MainPageSprite } from '../../data/MainPageSprite.svg';
-import ButtonPrimitive from '../../primitives/ButtonPrimitive';
+import ButtonPrimitive, { ButtonModes } from '../../primitives/ButtonPrimitive';
 import PartnersList from './PartnersList';
 import JoinForm from '../JoinForm';
+import PopupPrimitive from '../../primitives/PopupPrimitive';
+import InputPrimitive, { InputModes } from '../../primitives/InputPrimitive';
+import { inputPlaceholderFunction } from '../../utils/inputPlaceholderFunction';
+import LinkPrimitive from '../../primitives/LinkPrimitive';
 
-function MainPage() {
+function MainPage({
+  isPopupOpen,
+  setIsPopupOpen,
+}: {
+  isPopupOpen: boolean;
+  setIsPopupOpen: React.Dispatch<React.SetStateAction<boolean>>;
+}) {
   const goToMainSite = useCallback(() => {
     location.href = 'https://arda.digital/';
   }, []);
 
   const [isModalOpen, setIsModelOpen] = useState(false);
+  const [isRestorePopupOpen, setIsRestorePopupOpen] = useState(false);
 
   return (
     <div className="container px-10">
@@ -216,6 +227,58 @@ function MainPage() {
         </div>
       </SectionPrimitive>
       {isModalOpen && <JoinForm />}
+      {isPopupOpen && (
+        <PopupPrimitive>
+          <TypographyPrimitive as="p" mode={TypographyModes.PRIMARYPLUS}>
+            Авторизация
+          </TypographyPrimitive>
+          <InputPrimitive
+            type="text"
+            mode={InputModes.TEXTPRIMARY}
+            textParams={{ placeholder: 'Логин' }}
+            value=""
+            onChange={inputPlaceholderFunction}
+          />
+          <InputPrimitive
+            type="text"
+            mode={InputModes.TEXTPRIMARY}
+            textParams={{ placeholder: 'Пароль' }}
+            value=""
+            onChange={inputPlaceholderFunction}
+          />
+          <ButtonPrimitive
+            mode={ButtonModes.SIMPLE}
+            onClick={() => {
+              setIsPopupOpen(false);
+              setIsRestorePopupOpen(true);
+            }}
+            color={textColors.BLACK}
+          >
+            Забыли пароль?
+          </ButtonPrimitive>
+          <ButtonPrimitive
+            mode={ButtonModes.PRIMARY}
+            additionalClasses="relative"
+            color={textColors.BLACK}
+            bgColor={bgColors.GOLD}
+            afterColor={afterBgColors.BLACK}
+            hoverTextColor={hoverTextColors.GOLD}
+          >
+            <TypographyPrimitive>Войти</TypographyPrimitive>
+          </ButtonPrimitive>
+        </PopupPrimitive>
+      )}
+      {isRestorePopupOpen && (
+        <PopupPrimitive>
+          <TypographyPrimitive as="h2" mode={TypographyModes.TITULAR}>
+            Забыли пароль?
+          </TypographyPrimitive>
+          <TypographyPrimitive as="p">
+            Напишите нам на почту -{' '}
+            <LinkPrimitive href="mailto:it@arda.digital">it@arda.digital</LinkPrimitive>
+          </TypographyPrimitive>
+        </PopupPrimitive>
+      )}
     </div>
   );
 }
