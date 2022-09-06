@@ -1,7 +1,7 @@
 import React from 'react';
 import TypographyPrimitive, { TypographyModes } from '../../primitives/TypographyPrimitive';
-import SummaryData from '../../data/PersonalCabinetSummary.json';
-import { ReactComponent as SummarySprite } from '../../data/PersonalCabinetSummarySprite.svg';
+import SummaryData from '../../data/CabinetSummary/CabinetSummary.json';
+import { ReactComponent as SummarySprite } from '../../data/CabinetSummary/CabinetSummarySprite.svg';
 import IconPrimitive from '../../primitives/IconPrimitive';
 import { bgColors, textColors } from '../../themes/colors';
 import LinkPrimitive from '../../primitives/LinkPrimitive';

@@ -1,5 +1,5 @@
 import TypographyPrimitive, { TypographyModes } from '../primitives/TypographyPrimitive';
-import JoinFormData from '../data/JoinForm.json';
+import JoinFormData from '../data/MainPage/JoinForm.json';
 import InputPrimitive, { InputModes } from '../primitives/InputPrimitive';
 import { inputPlaceholderFunction } from '../utils/inputPlaceholderFunction';
 import React from 'react';

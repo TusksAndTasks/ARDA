@@ -1,7 +1,7 @@
 import TypographyPrimitive, { TypographyModes } from '../../primitives/TypographyPrimitive';
 import React, { useCallback, useState } from 'react';
 import SectionPrimitive from '../../primitives/SectionPrimitive';
-import MainPageData from '../../data/MainPage.json';
+import MainPageData from '../../data/MainPage/MainPage.json';
 import IconPrimitive from '../../primitives/IconPrimitive';
 import { squareSizes } from '../../themes/sizes';
 import {
@@ -11,7 +11,7 @@ import {
   hoverTextColors,
   textColors,
 } from '../../themes/colors';
-import { ReactComponent as MainPageSprite } from '../../data/MainPageSprite.svg';
+import { ReactComponent as MainPageSprite } from '../../data/MainPage/MainPageSprite.svg';
 import ButtonPrimitive, { ButtonModes } from '../../primitives/ButtonPrimitive';
 import PartnersList from './PartnersList';
 import JoinForm from '../JoinForm';

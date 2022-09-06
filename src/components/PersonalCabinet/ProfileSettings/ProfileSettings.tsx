@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import SettingsData from '../../../data/PersonalCabinetSettings.json';
+import SettingsData from '../../../data/CabinetSettings/CabinetSettings.json';
 import TypographyPrimitive, { TypographyModes } from '../../../primitives/TypographyPrimitive';
 import ButtonPrimitive from '../../../primitives/ButtonPrimitive';
 import { afterBgColors, borderColors, hoverTextColors, textColors } from '../../../themes/colors';

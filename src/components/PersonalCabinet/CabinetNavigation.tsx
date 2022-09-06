@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import IconPrimitive from '../../primitives/IconPrimitive';
-import CabinetNavigationData from '../../data/CabinetNavigation.json';
-import { ReactComponent as CabinetNavigationSprite } from '../../data/CabinetNavigationSprite.svg';
+import CabinetNavigationData from '../../data/CabinetNavigation/CabinetNavigation.json';
+import { ReactComponent as CabinetNavigationSprite } from '../../data/CabinetNavigation/CabinetNavigationSprite.svg';
 import { squareSizes } from '../../themes/sizes';
 import { bgColors, textColors } from '../../themes/colors';
 

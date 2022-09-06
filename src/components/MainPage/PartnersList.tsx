@@ -1,7 +1,7 @@
-import PartnersListData from '../../data/PartnersListData.json';
+import PartnersListData from '../../data/MainPage/PartnersListData.json';
 import React, { useCallback, useState } from 'react';
 import ButtonPrimitive from '../../primitives/ButtonPrimitive';
-import MainPageData from '../../data/MainPage.json';
+import MainPageData from '../../data/MainPage/MainPage.json';
 import TypographyPrimitive, { TypographyModes } from '../../primitives/TypographyPrimitive';
 
 function PartnersList() {
