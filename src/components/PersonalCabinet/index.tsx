@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, Route, Routes } from 'react-router-dom';
 import Summary from './Summary';
-import ProfileSettings from './ProfileSettings';
+import ProfileSettings from './ProfileSettings/ProfileSettings';
 import StandardsList from './StandardsList';
 import Webinars from './Webinars';
 import ResourceMap from './ResourceMap';
@@ -12,7 +12,7 @@ import CabinetNavigation from './CabinetNavigation';
 
 function PersonalCabinet() {
   return (
-    <>
+    <div className="flex">
       <CabinetNavigation />
       <Routes>
         <Route path="/" element={<Summary />}></Route>
@@ -24,7 +24,7 @@ function PersonalCabinet() {
         <Route path="exchange" element={<LeadExchange />}></Route>
         <Route path="additional" element={<AdditionalInfo />}></Route>
       </Routes>
-    </>
+    </div>
   );
 }
 

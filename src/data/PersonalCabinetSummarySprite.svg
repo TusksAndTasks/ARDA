@@ -1,0 +1,28 @@
+<svg viewBox="0 0 24 24">
+    <symbol id="GoalIcon1" strokeWidth="1.5">
+        <path stroke="none" d="M0 0h24v24H0z" />
+        <path d="M3 12h7l-3 -3m0 6l3 -3" />
+        <path d="M21 12h-7l3 -3m0 6l-3 -3" />
+        <path d="M9 6v-3h6v3" />
+        <path d="M9 18v3h6v-3" />
+    </symbol>
+    <symbol id="GoalIcon2" strokeWidth="1">
+        <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
+        />
+    </symbol>
+    <symbol id="GoalIcon3" strokeWidth="1.5">
+        <path d="M19.07 4.93l-1.41 1.41C19.1 7.79 20 9.79 20 12c0 4.42-3.58 8-8 8s-8-3.58-8-8c0-4.08 3.05-7.44 7-7.93v2.02C8.16 6.57 6 9.03 6 12c0 3.31 2.69 6 6 6s6-2.69 6-6c0-1.66-.67-3.16-1.76-4.24l-1.41 1.41C15.55 9.9 16 10.9 16 12c0 2.21-1.79 4-4 4s-4-1.79-4-4c0-1.86 1.28-3.41 3-3.86v2.14c-.6.35-1 .98-1 1.72 0 1.1.9 2 2 2s2-.9 2-2c0-.74-.4-1.38-1-1.72V2h-1C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10c0-2.76-1.12-5.26-2.93-7.07z"/>
+    </symbol>
+    <symbol id="GoalIcon4" strokeWidth="2">
+        <path stroke="none" d="M0 0h24v24H0z" />
+        <polyline points="3 7 9 13 13 9 21 17" />
+        <polyline points="21 10 21 17 14 17" />
+    </symbol>
+    <symbol id="GoalIcon5" strokeWidth="2">
+        <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3" />
+    </symbol>
+</svg>

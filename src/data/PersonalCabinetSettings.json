@@ -1,0 +1,35 @@
+{
+  "settings":  [
+  {
+    "descriptor": "Электронная почта",
+    "value": "test@mail.ru"
+  },
+  {
+    "descriptor": "Фамилия",
+    "value": "Тестирующих"
+  },
+  {
+    "descriptor": "Имя",
+    "value": "Василий"
+  },
+  {
+    "descriptor": "Компания",
+    "value": "Тестовая компания"
+  },
+  {
+    "descriptor": "Должность",
+    "value": "Тестировщик"
+  }
+],
+  "buttons":[
+    {
+    "text": "Изменить данные",
+    "id": "profile"
+  },
+  {
+    "text": "Изменить пароль",
+    "id": "password"
+  }
+  ],
+  "password": "test123"
+}

@@ -1,8 +1,8 @@
 import React, { ChangeEvent, HTMLInputTypeAttribute, useState } from 'react';
-import { afterBgColors, bgColors, hoverTextColors, textColors } from '../themes/colors';
+import { bgColors, hoverTextColors, textColors } from '../themes/colors';
 
 interface InputPrimitiveProps {
-  type: HTMLInputTypeAttribute;
+  type?: HTMLInputTypeAttribute;
   mode?: InputModes;
   textParams?: {
     placeholder: string;
