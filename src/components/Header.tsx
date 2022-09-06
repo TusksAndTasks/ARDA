@@ -16,25 +16,25 @@ function Header({
 }: {
   setIsPopupOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }) {
-  const [isAuthMock] = useSelector((state: GlobalState) => state.roles.role);
+  const userRole = useSelector((state: GlobalState) => state.roles.role);
 
   return (
     <header className="flex items-center justify-between bg-black px-10">
       <HeaderSprite className="hidden" />
-      <NavLink to={isAuthMock === rolesEnum.NONAUTHORIZED ? '' : 'cabinet'}>
+      <NavLink to={userRole === rolesEnum.NONAUTHORIZED ? '' : 'cabinet'}>
         <ButtonPrimitive
           mode={ButtonModes.SIMPLE}
-          onClick={() => setIsPopupOpen(isAuthMock === rolesEnum.NONAUTHORIZED)}
+          onClick={() => setIsPopupOpen(userRole === rolesEnum.NONAUTHORIZED)}
         >
           <div className="flex items-center">
             <IconPrimitive
               bgColor={bgColors.TRANSPARENT}
               size={squareSizes.SMALL}
               color={textColors.GOLD}
-              spriteId={isAuthMock === rolesEnum.NONAUTHORIZED ? 'LogIn' : 'ToCabinet'}
+              spriteId={userRole === rolesEnum.NONAUTHORIZED ? 'LogIn' : 'ToCabinet'}
             ></IconPrimitive>
             <TypographyPrimitive as="p" mode={TypographyModes.PRIMARYPLUS} color={textColors.GOLD}>
-              {isAuthMock === rolesEnum.NONAUTHORIZED ? 'Войти' : 'В личный кабинет'}
+              {userRole === rolesEnum.NONAUTHORIZED ? 'Войти' : 'В личный кабинет'}
             </TypographyPrimitive>
           </div>
         </ButtonPrimitive>

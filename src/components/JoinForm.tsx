@@ -9,7 +9,7 @@ import { afterBgColors, bgColors } from '../themes/colors';
 function JoinForm() {
   return (
     <div className="fixed top-0 left-0 z-10 flex h-full w-full items-center justify-center bg-black/50">
-      <form className="h-11/12 w-1/3 flex-col content-center items-center bg-lightgold px-10">
+      <form className="w-1/3 flex-col content-center items-center bg-lightgold px-10">
         <TypographyPrimitive as="h2" mode={TypographyModes.TITULAR}>
           {JoinFormData.title}
         </TypographyPrimitive>
