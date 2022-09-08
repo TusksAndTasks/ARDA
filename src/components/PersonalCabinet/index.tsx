@@ -3,7 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 import Summary from './Summary';
 import ProfileSettings from './ProfileSettings/ProfileSettings';
 import Webinars from './Webinars';
-import ResourceMap from './ResourceMap';
+import ResourceMap from './ResourceMap/ResourceMap';
 import EventCalendar from './EventCalendar';
 import LeadExchange from './LeadExchange';
 import AdditionalInfo from './AdditionalInfo';

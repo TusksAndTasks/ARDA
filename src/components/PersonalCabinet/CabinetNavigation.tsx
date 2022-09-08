@@ -8,7 +8,7 @@ import { bgColors, textColors } from '../../themes/colors';
 
 function CabinetNavigation() {
   return (
-    <div className="flex flex-col justify-between bg-gold">
+    <div className="sticky top-0 bottom-0 z-10 flex flex-col justify-between bg-gold">
       <CabinetNavigationSprite className="hidden" />
       {CabinetNavigationData.navigation.map((navelem) => (
         <Link

@@ -1,0 +1,11 @@
+{
+  "membership": "Член ARDA",
+  "isBroker": "Брокер",
+  "accredited": "Аккредитованная организация",
+  "city": ["Ростов", "Москва", "Воронеж", "Омск"],
+  "partnershipFormat": ["outstaff", "outsource"],
+  "techStack": ["PhP", "React", "Vue", "Laravel"],
+  "services": ["frontend", "backend", "fullstack"],
+  "expertise": ["first", "second", "third"],
+  "markets": ["outstaff", "outsource"]
+}
