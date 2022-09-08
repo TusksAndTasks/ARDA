@@ -12,7 +12,7 @@ import CabinetStandards from './CabinetStandards';
 
 function PersonalCabinet() {
   return (
-    <div className="flex">
+    <div className="vertical-container flex">
       <CabinetNavigation />
       <Routes>
         <Route path="/" element={<Summary />}></Route>
