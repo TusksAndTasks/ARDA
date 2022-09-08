@@ -1,0 +1,28 @@
+{
+  "title": "Обмен лидами",
+  "communityRules": "Для участияв чате, необходимо соблюдать правила сообщества: 1) Дескриминация и ненормативная лекция запрещены, 2) Необходимо быть участником ARDA",
+  "chatLink": "chat.tg",
+  "linksSection": {
+    "title": "Полезные ссылки",
+    "links": [
+      {
+        "theme":  "Фронтенд",
+        "thematicLinks": [
+        "source.one", "source.two"
+      ]
+      },
+      {
+        "theme":  "Бэкенд",
+        "thematicLinks": [
+          "source.three", "source.four"
+        ]
+      },
+      {
+        "theme":  "Дизайн",
+        "thematicLinks": [
+          "source.five"
+        ]
+      }
+    ]
+  }
+}
