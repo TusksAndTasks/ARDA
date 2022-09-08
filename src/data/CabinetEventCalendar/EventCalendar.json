@@ -1,0 +1,83 @@
+[
+  {
+    "year": "2021",
+    "months": [
+      {
+      "title": "Ноябрь",
+      "events": [
+        {
+          "name": "Первый эвент",
+          "type": "offline",
+          "startDate": "23.11.2021 19:00",
+          "endDate": "23.11.2021 21:00",
+          "city":["Ростов"] ,
+          "link": "firstEvent.com",
+          "description": "Первый эвент проходящий в Ростове в это время",
+          "transcript": "firstEvent.com/transcript",
+          "auditory": ["Фронтенд-разработчики"],
+          "sort": 0,
+          "isActive": true
+        },
+        {
+          "name": "Второй эвент",
+          "type": "offline",
+          "startDate": "23.11.2021 19:00",
+          "endDate": "23.11.2021 21:00",
+          "city":["Ростов"] ,
+          "link": "secondEvent.com",
+          "description": "Второй эвент проходящий в Ростове в это время",
+          "transcript": "secondEvent.com/transcript",
+          "auditory": ["Бекенд-разработчики"],
+          "sort": 1,
+          "isActive": true
+        }
+      ]
+    },
+      {
+        "title": "Декабрь",
+        "events": []
+      }
+    ]
+  },
+  {
+    "year": "2022",
+    "months": [
+      {
+        "title": "Январь",
+        "events": [
+          {
+            "name": "Эвент января",
+            "type": "online",
+            "startDate": "23.01.2022 18:00",
+            "endDate": "23.01.2022 21:00",
+            "city":[],
+            "link": "janev.com",
+            "description": "Январский онлайн-эвент",
+            "transcript": "",
+            "auditory": ["Фронтенд-разработчики"],
+            "sort": 0,
+            "isActive": true
+          }
+        ]
+      },
+      {
+        "title": "Февраль",
+        "events": [
+          {
+            "name": "Эвент февраля",
+            "type": "offline",
+            "startDate": "25.02.2022 18:00",
+            "endDate": "26.02.2022 21:00",
+            "city":["Moscow"],
+            "link": "febev.com",
+            "description": "Февральский онлайн-эвент",
+            "transcript": "febev.cpm/tanscript",
+            "auditory": ["Фронтенд-разработчики"],
+            "sort": 0,
+            "isActive": true
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -70,9 +70,11 @@ function FullCompanyCard({ resource }: { resource: null | IResource }) {
           </div>
         ))}
       </div>
-      <div className="h-6 w-[500px] cursor-pointer overflow-y-hidden border border-amber-900 hover:h-auto hover:border-amber-500">
-        <TypographyPrimitive>{resource.servicesCommentary}</TypographyPrimitive>
-      </div>
+      {resource.servicesCommentary && (
+        <div className="h-6 w-[500px] cursor-pointer overflow-y-hidden border border-amber-900 hover:h-auto hover:border-amber-500">
+          <TypographyPrimitive>{resource.servicesCommentary}</TypographyPrimitive>
+        </div>
+      )}
       <div className="flex gap-2">
         {resource.expertise.map((expertise) => (
           <div key={expertise} className="bg-bronze p-2">
@@ -80,9 +82,11 @@ function FullCompanyCard({ resource }: { resource: null | IResource }) {
           </div>
         ))}
       </div>
-      <div className="h-6 w-[500px] cursor-pointer overflow-y-hidden border border-amber-900 hover:h-auto hover:border-amber-500">
-        <TypographyPrimitive>{resource.expertiseCommentary}</TypographyPrimitive>
-      </div>
+      {resource.expertiseCommentary && (
+        <div className="h-6 w-[500px] cursor-pointer overflow-y-hidden border border-amber-900 hover:h-auto hover:border-amber-500">
+          <TypographyPrimitive>{resource.expertiseCommentary}</TypographyPrimitive>
+        </div>
+      )}
       <div className="flex gap-2">
         {resource.markets.map((market) => (
           <div key={market} className="bg-bronze p-2">
@@ -90,20 +94,26 @@ function FullCompanyCard({ resource }: { resource: null | IResource }) {
           </div>
         ))}
       </div>
-      <div className="h-6 w-[500px] cursor-pointer overflow-y-hidden border border-amber-900 hover:h-auto hover:border-amber-500">
-        <TypographyPrimitive>{resource.marketsCommentary}</TypographyPrimitive>
-      </div>
+      {resource.marketsCommentary && (
+        <div className="h-6 w-[500px] cursor-pointer overflow-y-hidden border border-amber-900 hover:h-auto hover:border-amber-500">
+          <TypographyPrimitive>{resource.marketsCommentary}</TypographyPrimitive>
+        </div>
+      )}
       <div>
         <TypographyPrimitive as="p">{resource.requestShowcase}</TypographyPrimitive>
-        <div className="h-6 w-[500px] cursor-pointer overflow-y-hidden border border-amber-900 hover:h-auto hover:border-amber-500">
-          <TypographyPrimitive>{resource.showcaseCommentary}</TypographyPrimitive>
-        </div>
+        {resource.showcaseCommentary && (
+          <div className="h-6 w-[500px] cursor-pointer overflow-y-hidden border border-amber-900 hover:h-auto hover:border-amber-500">
+            <TypographyPrimitive>{resource.showcaseCommentary}</TypographyPrimitive>
+          </div>
+        )}
       </div>
       <div>
         <TypographyPrimitive as="p">{resource.benchMap}</TypographyPrimitive>
-        <div className="h-6 w-[500px] cursor-pointer overflow-y-hidden border border-amber-900 hover:h-auto hover:border-amber-500">
-          <TypographyPrimitive>{resource.benchMapCommentary}</TypographyPrimitive>
-        </div>
+        {resource.benchMapCommentary && (
+          <div className="h-6 w-[500px] cursor-pointer overflow-y-hidden border border-amber-900 hover:h-auto hover:border-amber-500">
+            <TypographyPrimitive>{resource.benchMapCommentary}</TypographyPrimitive>
+          </div>
+        )}
       </div>
       <TypographyPrimitive as="p">{resource.content}</TypographyPrimitive>
       <TypographyPrimitive as="p">{resource.groundwork}</TypographyPrimitive>

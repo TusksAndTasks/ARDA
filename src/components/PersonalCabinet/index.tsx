@@ -4,7 +4,7 @@ import Summary from './Summary';
 import ProfileSettings from './ProfileSettings/ProfileSettings';
 import Webinars from './Webinars';
 import ResourceMap from './ResourceMap/ResourceMap';
-import EventCalendar from './EventCalendar';
+import EventCalendar from './EventCalendar/EventCalendar';
 import LeadExchange from './LeadExchange';
 import AdditionalInfo from './AdditionalInfo';
 import CabinetNavigation from './CabinetNavigation';
