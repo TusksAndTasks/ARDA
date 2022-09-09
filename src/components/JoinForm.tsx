@@ -5,11 +5,13 @@ import { inputPlaceholderFunction } from '../utils/inputPlaceholderFunction';
 import React from 'react';
 import { changeRangeBackground } from '../utils/changeRangeBackground';
 import { afterBgColors, bgColors } from '../themes/colors';
+import { Fonts } from '../themes/fonts';
+import { fontSizes } from '../themes/sizes';
 
 function JoinForm() {
   return (
     <div className="fixed top-0 left-0 z-10 flex h-full w-full items-center justify-center bg-black/50">
-      <form className="w-1/3 flex-col content-center items-center bg-lightgold px-10">
+      <form className="flex max-h-[1000px] w-1/3 flex-col gap-1 overflow-y-auto bg-white px-10 py-4">
         <TypographyPrimitive as="h2" mode={TypographyModes.TITULAR}>
           {JoinFormData.title}
         </TypographyPrimitive>
@@ -28,7 +30,12 @@ function JoinForm() {
         ))}
         {JoinFormData.radioInputs.map((input) => (
           <div key={input.name}>
-            <TypographyPrimitive as="h3" mode={TypographyModes.PRIMARYPLUS}>
+            <TypographyPrimitive
+              as="h3"
+              mode={TypographyModes.PRIMARY}
+              font={Fonts.GENERALMEDIUM}
+              fontSize={fontSizes.DEFAULT}
+            >
               {input.label}
             </TypographyPrimitive>
             {input.buttons.map((radio) => (
@@ -49,9 +56,19 @@ function JoinForm() {
         ))}
         {JoinFormData.rangeInputs.map((input) => (
           <div key={input.label}>
-            <TypographyPrimitive as="label" mode={TypographyModes.PRIMARYPLUS}>
+            <TypographyPrimitive
+              as="label"
+              mode={TypographyModes.PRIMARY}
+              font={Fonts.GENERALMEDIUM}
+              fontSize={fontSizes.DEFAULT}
+            >
               {input.label}
-              <TypographyPrimitive as="p" mode={TypographyModes.PRIMARY}>
+              <TypographyPrimitive
+                as="p"
+                mode={TypographyModes.PRIMARY}
+                font={Fonts.GENERAL}
+                fontSize={fontSizes.SMALL}
+              >
                 {input.additionalLabel}
               </TypographyPrimitive>
               <InputPrimitive
@@ -61,7 +78,7 @@ function JoinForm() {
                 rangeParams={{ max: +input.rangeProps.max, min: +input.rangeProps.min }}
                 onChange={changeRangeBackground}
               />
-              <div>
+              <div className="flex justify-between">
                 <TypographyPrimitive as="p" mode={TypographyModes.PRIMARY}>
                   {input.rangeProps.min}
                 </TypographyPrimitive>
@@ -84,7 +101,7 @@ function JoinForm() {
           </TypographyPrimitive>
         ))}
         <div
-          className={` ${bgColors.BLACK} ${afterBgColors.GOLD} button-primary relative overflow-hidden`}
+          className={` ${bgColors.BLACK} ${afterBgColors.GOLD} button-primary relative cursor-pointer self-center overflow-hidden`}
         >
           <InputPrimitive
             type="submit"

@@ -2,7 +2,7 @@ import { rolesEnum } from './rolesSliceTypes';
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 const initialState: { role: rolesEnum } = {
-  role: rolesEnum.COMMUNITYMEMBER,
+  role: rolesEnum.NONAUTHORIZED,
 };
 
 const rolesSlice = createSlice({

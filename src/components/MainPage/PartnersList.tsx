@@ -14,21 +14,23 @@ function PartnersList() {
   return (
     <div
       className={`${
-        isFullList ? 'max-h-full' : 'max-h-96'
-      } relative flex flex-wrap items-end justify-center gap-3 overflow-hidden transition duration-500 ease-in-out after:absolute after:h-56 after:w-full after:bg-opacity-40 after:bg-gradient-to-b after:from-transparent after:via-light-gray after:to-light-black`}
+        isFullList ? 'full-content max-h-[2000px]' : 'preview-content max-h-[500px]'
+      } horizontal-container relative flex flex-wrap items-end justify-center gap-3 overflow-hidden after:absolute after:h-56 after:w-full after:bg-opacity-40 after:bg-gradient-to-b after:from-transparent after:via-light-gray after:to-light-black`}
     >
-      {PartnersListData.partners.map((partnerLogo, index) => (
-        <img
-          src={partnerLogo}
-          alt="logo"
-          key={index.toString() + partnerLogo.slice(0, 2)}
-          width="100px"
-          height="auto"
-          loading="lazy"
-          className="odd:pb-24"
-        />
-      ))}
-      <ButtonPrimitive additionalClasses="absolute bottom-0" onClick={toggleListMode}>
+      <div className="mb-10 flex flex-wrap items-end justify-center gap-3 overflow-hidden px-8">
+        {PartnersListData.partners.map((partnerLogo, index) => (
+          <img
+            src={partnerLogo}
+            alt="logo"
+            key={index.toString() + partnerLogo.slice(0, 2)}
+            width="100px"
+            height="auto"
+            loading="lazy"
+            className="odd:pb-24"
+          />
+        ))}
+      </div>
+      <ButtonPrimitive additionalClasses="absolute bottom-8" onClick={toggleListMode}>
         <TypographyPrimitive mode={TypographyModes.PRIMARYPLUS}>
           {isFullList
             ? MainPageData.PartnersSection.content.buttonOpen

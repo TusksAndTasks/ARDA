@@ -1,4 +1,4 @@
-import { bgColors, textColors } from '../themes/colors';
+import { bgColors, borderColors, textColors } from '../themes/colors';
 import React from 'react';
 import { squareSizes } from '../themes/sizes';
 
@@ -8,6 +8,7 @@ interface IIconPrimitiveProps {
   bgColor?: bgColors;
   size?: squareSizes;
   bgSize?: squareSizes;
+  borderColor?: borderColors;
 }
 
 function IconPrimitive({
@@ -15,11 +16,16 @@ function IconPrimitive({
   bgColor = bgColors.WHITE,
   size = squareSizes.SMALL,
   bgSize = squareSizes.SMALLPLUS,
+  borderColor,
   spriteId,
 }: IIconPrimitiveProps) {
   return (
     <>
-      <div className={`${bgColor} ${bgSize} flex items-center justify-center`}>
+      <div
+        className={`${bgColor} ${bgSize} flex items-center justify-center ${
+          borderColor && `border-2 ${borderColor}`
+        }`}
+      >
         <svg
           className={`${size} ${color}`}
           viewBox="0 0 24 24"

@@ -26,14 +26,14 @@
                 d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
         />
     </symbol>
-    <symbol id="MissionIcon1" strokeWidth="1.5">
+    <symbol id="MissionIcon1" strokeWidth="1">
         <path stroke="none" d="M0 0h24v24H0z" />
         <path d="M3 12h7l-3 -3m0 6l3 -3" />
         <path d="M21 12h-7l3 -3m0 6l-3 -3" />
         <path d="M9 6v-3h6v3" />
         <path d="M9 18v3h6v-3" />
     </symbol>
-    <symbol id="MissionIcon2" strokeWidth="2">
+    <symbol id="MissionIcon2" strokeWidth="1">
         <path stroke="none" d="M0 0h24v24H0z" />
         <polyline points="3 7 9 13 13 9 21 17" />
         <polyline points="21 10 21 17 14 17" />
@@ -42,11 +42,10 @@
         <path
             strokeLinecap="round"
             strokeLinejoin="round"
-            strokeWidth="2"
             d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
         />
     </symbol>
-    <symbol id="MissionIcon4" strokeWidth="2">
+    <symbol id="MissionIcon4" strokeWidth="1">
         <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3" />
     </symbol>
     <symbol id="ProfitIcon1" strokeWidth="1.2">
@@ -77,12 +76,12 @@
             </g>
         </g>
     </symbol>
-    <symbol id="ConditionIcon1" strokeWidth="1.5">
+    <symbol id="ConditionIcon1" strokeWidth="1">
         <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
         <circle cx="8.5" cy="7" r="4" />
         <polyline points="17 11 19 13 23 9" />
     </symbol>
-    <symbol id="ConditionIcon2" strokeWidth="1.5">
+    <symbol id="ConditionIcon2" strokeWidth="1">
         <path stroke="none" d="M0 0h24v24H0z" />
         <path d="M14 3v4a1 1 0 0 0 1 1h4" />
         <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" />
@@ -90,7 +89,7 @@
         <line x1="9" y1="13" x2="15" y2="13" />
         <line x1="13" y1="17" x2="15" y2="17" />
     </symbol>
-    <symbol id="ConditionIcon3" strokeWidth="1.5">
+    <symbol id="ConditionIcon3" strokeWidth="1">
         <path stroke="none" d="M0 0h24v24H0z" />
         <polyline points="7 8 3 12 7 16" />
         <polyline points="17 8 21 12 17 16" />
@@ -100,23 +99,21 @@
         <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                strokeWidth="2"
                 d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"
         />
     </symbol>
-    <symbol id="ConditionIcon5" strokeWidth="1.3">
+    <symbol id="ConditionIcon5" strokeWidth="1">
         <g>
             <path d="M16.48,10.41c-0.39,0.39-1.04,0.39-1.43,0l-4.47-4.46l-7.05,7.04l-0.66-0.63c-1.17-1.17-1.17-3.07,0-4.24l4.24-4.24 c1.17-1.17,3.07-1.17,4.24,0L16.48,9C16.87,9.39,16.87,10.02,16.48,10.41z M17.18,8.29c0.78,0.78,0.78,2.05,0,2.83 c-1.27,1.27-2.61,0.22-2.83,0l-3.76-3.76l-5.57,5.57c-0.39,0.39-0.39,1.02,0,1.41c0.39,0.39,1.02,0.39,1.42,0l4.62-4.62l0.71,0.71 l-4.62,4.62c-0.39,0.39-0.39,1.02,0,1.41c0.39,0.39,1.02,0.39,1.42,0l4.62-4.62l0.71,0.71l-4.62,4.62c-0.39,0.39-0.39,1.02,0,1.41 c0.39,0.39,1.02,0.39,1.41,0l4.62-4.62l0.71,0.71l-4.62,4.62c-0.39,0.39-0.39,1.02,0,1.41c0.39,0.39,1.02,0.39,1.41,0l8.32-8.34 c1.17-1.17,1.17-3.07,0-4.24l-4.24-4.24c-1.15-1.15-3.01-1.17-4.18-0.06L17.18,8.29z" />
         </g>
     </symbol>
-    <symbol id="ConditionIcon6" strokeWidth="1.3">
+    <symbol id="ConditionIcon6" strokeWidth="1">
         <path d="M20 2H4c-1.11 0-2 .89-2 2v11c0 1.11.89 2 2 2h4v5l4-2 4 2v-5h4c1.11 0 2-.89 2-2V4c0-1.11-.89-2-2-2zm0 13H4v-2h16v2zm0-5H4V4h16v6z" />
     </symbol>
     <symbol id="ArrowDown" strokeWidth="1">
         <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                strokeWidth="2"
                 d="M16 17l-4 4m0 0l-4-4m4 4V3"
         />
     </symbol>

@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react';
+import React from 'react';
 import { useSelector } from 'react-redux';
 import { GlobalState } from '../../redux/store';
 import TypographyPrimitive, { TypographyModes } from '../../primitives/TypographyPrimitive';
@@ -9,13 +9,12 @@ import { afterBgColors, borderColors, hoverTextColors, textColors } from '../../
 import Warning from './Warning';
 import PopupPrimitive from '../../primitives/PopupPrimitive';
 import ButtonPrimitive from '../../primitives/ButtonPrimitive';
+import { usePopups } from '../../hooks/usePopups';
+import { popupIds } from '../../redux/slices/PopupSlice';
 
 function Webinars() {
   const userRole = useSelector((state: GlobalState) => state.roles.role);
-  const [isPopupOpen, setIsPopupOpen] = useState(false);
-
-  const onClick = useCallback(() => setIsPopupOpen(true), []);
-  const closePopup = useCallback(() => setIsPopupOpen(false), []);
+  const [closePopup, setActivePopup, activePopupId] = usePopups();
 
   return (
     <div className="ml-2.5 flex w-full flex-col">
@@ -51,14 +50,14 @@ function Webinars() {
             </TypographyPrimitive>
             {isWarning && (
               <div className="flex justify-center">
-                <Warning onClick={onClick} />
+                <Warning onClick={() => setActivePopup(popupIds.WEBINARSJOIN)} />
               </div>
             )}
           </div>
         );
       })}
-      {isPopupOpen && (
-        <PopupPrimitive>
+      {activePopupId === popupIds.WEBINARSJOIN && (
+        <PopupPrimitive closePopup={closePopup}>
           <TypographyPrimitive as="h2" mode={TypographyModes.TITULAR}>
             Вы хотите присоединиться?
           </TypographyPrimitive>
@@ -68,7 +67,6 @@ function Webinars() {
             afterColor={afterBgColors.GOLD}
             hoverTextColor={hoverTextColors.BRONZE}
             additionalClasses="relative"
-            onClick={closePopup}
           >
             Продолжить
           </ButtonPrimitive>

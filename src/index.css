@@ -8,6 +8,16 @@
     src: url('./assets/fonts/Oswald-SemiBold.ttf');
 }
 
+@font-face {
+    font-family: "Roboto-Black";
+    src: url("./assets/fonts/Roboto-Black.ttf");
+}
+
+@font-face {
+    font-family: "Roboto-Medium";
+    src: url("./assets/fonts/Roboto-Medium.ttf");
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -16,6 +26,11 @@
     .vertical-container{
         min-height: calc(100vh - 152px);
         max-height: calc(100vh - 152px);
+    }
+
+    .horizontal-container{
+        width: 100vw;
+        left: calc(-50vw + 50%);
     }
 
     .button-primary {
@@ -103,5 +118,33 @@
         background: transparent;
     }
 
+
+    .full-content{
+        animation-name: animateFullHeight;
+        animation-duration: 1000ms;
+        animation-timing-function: ease-out;
+    }
+
+    @keyframes animateFullHeight {
+        from {
+            max-height: 500px;
+        } to {
+        max-height: 2000px;
+        }
+    }
+
+    .preview-content{
+        animation-name: animatePreviewHeight;
+        animation-duration: 1000ms;
+        animation-timing-function: ease-out;
+    }
+
+    @keyframes animatePreviewHeight {
+        from {
+            max-height: 2000px;
+        } to {
+              max-height: 500px;
+          }
+    }
 }
 

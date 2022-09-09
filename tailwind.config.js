@@ -1,11 +1,14 @@
 /** @type {import('tailwindcss').Config} */
+
 module.exports = {
   content: ["./src/**/*.{ts,tsx}"],
   theme: {
     extend: {
       fontFamily: {
         'general': ['Roboto-Regular', 'sans-serif'],
-        'titular': ['Oswald-SemiBold', 'serif']
+        'titular': ['Oswald-SemiBold', 'serif'],
+        'general-bold': ['Roboto-Black', 'sans-serif'],
+        'general-medium': ['Roboto-Medium', 'sans-serif']
       },
       colors: {
         gold: '#FBBC32',
@@ -28,11 +31,22 @@ module.exports = {
       }),
       filter:{
         'gold': 'invert(93%) sepia(7%) saturate(6422%) hue-rotate(329deg) brightness(99%) contrast(100%)'
+      },
+      backgroundImage: {
+        'triangle-pattern': "url('../public/images/pattern.png')"
+      },
+      backgroundSize: {
+        "partial-pattern": "520px"
+      },
+      backgroundPosition: {
+        "left-side": "-135px",
+        "right-side": "135px"
       }
     },
     dropShadow: {
       'point-shadow': '5px 0px 0px #000'
     },
+
   },
   plugins: [
   require('@tailwindcss/forms')

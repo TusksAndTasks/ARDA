@@ -10,22 +10,18 @@ import { NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { GlobalState } from '../redux/store';
 import { rolesEnum } from '../redux/slices/rolesSliceTypes';
+import { usePopups } from '../hooks/usePopups';
+import { popupIds } from '../redux/slices/PopupSlice';
 
-function Header({
-  setIsPopupOpen,
-}: {
-  setIsPopupOpen: React.Dispatch<React.SetStateAction<boolean>>;
-}) {
+function Header() {
   const userRole = useSelector((state: GlobalState) => state.roles.role);
+  const [, setPopup] = usePopups();
 
   return (
     <header className="flex items-center justify-between bg-black px-10">
       <HeaderSprite className="hidden" />
       <NavLink to={userRole === rolesEnum.NONAUTHORIZED ? '' : 'cabinet'}>
-        <ButtonPrimitive
-          mode={ButtonModes.SIMPLE}
-          onClick={() => setIsPopupOpen(userRole === rolesEnum.NONAUTHORIZED)}
-        >
+        <ButtonPrimitive mode={ButtonModes.SIMPLE} onClick={() => setPopup(popupIds.AUTH)}>
           <div className="flex items-center">
             <IconPrimitive
               bgColor={bgColors.TRANSPARENT}

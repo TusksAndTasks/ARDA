@@ -5,17 +5,16 @@ import { GlobalState } from '../../redux/store';
 import { rolesEnum } from '../../redux/slices/rolesSliceTypes';
 import LinkPrimitive from '../../primitives/LinkPrimitive';
 import { afterBgColors, borderColors, hoverTextColors, textColors } from '../../themes/colors';
-import React, { useCallback, useState } from 'react';
+import React from 'react';
 import Warning from './Warning';
 import PopupPrimitive from '../../primitives/PopupPrimitive';
 import ButtonPrimitive from '../../primitives/ButtonPrimitive';
+import { usePopups } from '../../hooks/usePopups';
+import { popupIds } from '../../redux/slices/PopupSlice';
 
 function CabinetStandards() {
   const userRole = useSelector((state: GlobalState) => state.roles.role);
-  const [isPopupOpen, setIsPopupOpen] = useState(false);
-
-  const onClick = useCallback(() => setIsPopupOpen(true), []);
-  const closePopup = useCallback(() => setIsPopupOpen(false), []);
+  const [closePopup, setActivePopup, activePopupId] = usePopups();
 
   return (
     <div className="ml-2.5 flex w-full flex-col">
@@ -51,14 +50,14 @@ function CabinetStandards() {
             </TypographyPrimitive>
             {isWarning && (
               <div className="flex justify-center">
-                <Warning onClick={onClick} />
+                <Warning onClick={() => setActivePopup(popupIds.STANDARDSJOIN)} />
               </div>
             )}
           </div>
         );
       })}
-      {isPopupOpen && (
-        <PopupPrimitive>
+      {activePopupId === popupIds.STANDARDSJOIN && (
+        <PopupPrimitive closePopup={closePopup}>
           <TypographyPrimitive as="h2" mode={TypographyModes.TITULAR}>
             Вы хотите присоединиться?
           </TypographyPrimitive>
@@ -68,7 +67,6 @@ function CabinetStandards() {
             afterColor={afterBgColors.GOLD}
             hoverTextColor={hoverTextColors.BRONZE}
             additionalClasses="relative"
-            onClick={closePopup}
           >
             Продолжить
           </ButtonPrimitive>
