@@ -56,22 +56,23 @@ function MainPage() {
       <SectionPrimitive
         mode={SectionModes.WITHPATTERN}
         bgColor={bgColors.GOLD}
-        customHeight="h-[240px]"
+        customHeight="xl:h-[270px] md:h-[420px] lg:h-[320px] xsm:h-[640px] h-[1230px]"
       >
         <div className="flex flex-col items-center gap-3">
           <TypographyPrimitive as="h2" mode={TypographyModes.TITULAR}>
             {MainPageData.MainPointSection.title}
           </TypographyPrimitive>
           {MainPageData.MainPointSection.content.map((text) => (
-            <TypographyPrimitive
-              as="p"
-              mode={TypographyModes.PRIMARY}
-              fontSize={fontSizes.DEFAULT}
-              font={Fonts.GENERALBOLD}
-              key={text.slice(0, 5)}
-            >
-              {text}
-            </TypographyPrimitive>
+            <div key={text.slice(0, 5)} className="w-5/6">
+              <TypographyPrimitive
+                as="p"
+                mode={TypographyModes.PRIMARY}
+                fontSize={fontSizes.DEFAULT}
+                font={Fonts.GENERALBOLD}
+              >
+                {text}
+              </TypographyPrimitive>
+            </div>
           ))}
         </div>
       </SectionPrimitive>

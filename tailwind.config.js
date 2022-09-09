@@ -17,6 +17,7 @@ module.exports = {
         lightbronze: '#C08741'
       },
       screens: {
+        xsm: '420px',
         lg: '980px',
         xl: '1440px',
       },
@@ -36,11 +37,16 @@ module.exports = {
         'triangle-pattern': "url('../public/images/pattern.png')"
       },
       backgroundSize: {
-        "partial-pattern": "520px"
+        "partial-pattern": "556px",
+        "partial-pattern-xl": "450px",
+        "partial-pattern-md": "260px",
+        "partial-pattern-xsm": "190px",
       },
       backgroundPosition: {
-        "left-side": "-135px",
-        "right-side": "135px"
+        "pattern-pos": "-141px 828px",
+        "pattern-pos-xl": "-135px",
+        "pattern-pos-md": "-60px 125px",
+        "partial-pos-xsm": "-44px -54px"
       }
     },
     dropShadow: {
