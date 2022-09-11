@@ -6,8 +6,8 @@ interface IIconPrimitiveProps {
   spriteId: string;
   color?: textColors;
   bgColor?: bgColors;
-  size?: squareSizes;
-  bgSize?: squareSizes;
+  size?: squareSizes | string;
+  bgSize?: squareSizes | string;
   borderColor?: borderColors;
 }
 

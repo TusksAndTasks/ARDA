@@ -129,7 +129,7 @@
         from {
             max-height: 500px;
         } to {
-        max-height: 2000px;
+        max-height: 3000px;
         }
     }
 
@@ -141,7 +141,7 @@
 
     @keyframes animatePreviewHeight {
         from {
-            max-height: 2000px;
+            max-height: 3000px;
         } to {
               max-height: 500px;
           }

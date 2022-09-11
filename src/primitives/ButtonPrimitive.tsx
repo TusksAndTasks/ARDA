@@ -21,6 +21,7 @@ interface IButtonProps {
 
 export enum ButtonModes {
   PRIMARY = 'PRIMARY',
+  PRIMARYFULL = 'PRIMARYFULL',
   SIMPLE = 'SIMPLE',
 }
 
@@ -50,5 +51,7 @@ export default React.memo(ButtonPrimitive);
 const ButtonStylesMap = {
   [ButtonModes.PRIMARY]:
     'button-primary px-5 py-2 block focus:outline-none border border-solid text-center overflow-hidden',
+  [ButtonModes.PRIMARYFULL]:
+    'button-primary w-full sm:w-auto px-5 py-2 block focus:outline-none border border-solid text-center overflow-hidden',
   [ButtonModes.SIMPLE]: '',
 };

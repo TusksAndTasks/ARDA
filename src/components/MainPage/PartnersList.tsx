@@ -14,7 +14,9 @@ function PartnersList() {
   return (
     <div
       className={`${
-        isFullList ? 'full-content max-h-[2000px]' : 'preview-content max-h-[500px]'
+        isFullList
+          ? 'full-content max-h-[9000px] lg:max-h-[3000px]'
+          : 'preview-content max-h-[500px]'
       } horizontal-container relative flex flex-wrap items-end justify-center gap-3 overflow-hidden after:absolute after:h-56 after:w-full after:bg-opacity-40 after:bg-gradient-to-b after:from-transparent after:via-light-gray after:to-light-black`}
     >
       <div className="mb-10 flex flex-wrap items-end justify-center gap-3 overflow-hidden px-8">

@@ -56,7 +56,7 @@ function MainPage() {
       <SectionPrimitive
         mode={SectionModes.WITHPATTERN}
         bgColor={bgColors.GOLD}
-        customHeight="xl:h-[270px] md:h-[420px] lg:h-[320px] xsm:h-[640px] h-[1230px]"
+        customHeight="h-[900px] sm:h-[450px] xsm:h-[640px] xl:h-[270px] md:h-[420px] "
       >
         <div className="flex flex-col items-center gap-3">
           <TypographyPrimitive as="h2" mode={TypographyModes.TITULAR}>
@@ -82,13 +82,13 @@ function MainPage() {
         </TypographyPrimitive>
         {MainPageData.ProblemsSection.content.map((content) => (
           <div
-            className="flex w-5/6 content-center items-center gap-2 pb-5 text-start"
+            className="flex flex-col md:w-5/6 md:flex-row md:content-center md:items-center md:gap-2 md:pb-5 md:text-start"
             key={content.text.slice(0, 5)}
           >
             <IconPrimitive
               spriteId={content.icon}
               size={squareSizes.MEDIUM}
-              bgSize={squareSizes.MEDIUMPLUS}
+              bgSize="w-full h-16 md:w-16"
               color={textColors.BLACK}
               bgColor={bgColors.GOLD}
             />
@@ -101,16 +101,20 @@ function MainPage() {
       <SectionPrimitive
         bgColor={bgColors.BLACK}
         mode={SectionModes.WITHBACKGROUND}
-        customHeight="h-[330px]"
+        customHeight="h-[875px] xsm:h-[500px] sm:h-[330px]"
       >
         <TypographyPrimitive as="h2" mode={TypographyModes.TITULAR} color={textColors.GOLD}>
           {MainPageData.MissionSection.title}
         </TypographyPrimitive>
-        <div className="flex items-center justify-between">
+        <div className="flex flex-col flex-wrap items-center justify-between gap-5 sm:flex-row sm:flex-nowrap xsm:flex-row">
           {MainPageData.MissionSection.content.map((content) => (
             <div
               className={`flex cursor-pointer flex-col content-center items-center gap-2 overflow-hidden rounded-md border-2 border-gold pb-5 text-center transition-all
-              ${cardsOpen.includes(content.text) ? 'h-[228px] w-[360px]' : 'h-[168px] w-[168px]'}`}
+              ${
+                cardsOpen.includes(content.text)
+                  ? 'h-[160px] w-[160px] lg:h-[228px] lg:w-[228px]'
+                  : 'h-[110px] w-[110px] lg:h-[168px] lg:w-[168px]'
+              }`}
               key={content.text.slice(0, 5)}
               onClick={() => {
                 toggleCardsDisplay(content.text);
@@ -118,7 +122,7 @@ function MainPage() {
             >
               <IconPrimitive
                 spriteId={content.icon}
-                size={squareSizes.BIG}
+                size={squareSizes.BIGADAPTIVE}
                 bgSize={squareSizes.BIGPLUS}
                 color={textColors.GOLD}
                 bgColor={bgColors.BLACK}
@@ -141,13 +145,13 @@ function MainPage() {
         </TypographyPrimitive>
         {MainPageData.ProfitSection.content.map((content) => (
           <div
-            className="flex w-5/6 content-center items-center gap-2 pb-5 text-start"
+            className="flex w-5/6 flex-col items-center gap-2 pb-5 text-start sm:flex-row"
             key={content.text.slice(0, 5)}
           >
             <IconPrimitive
               spriteId={content.icon}
               size={squareSizes.MEDIUM}
-              bgSize={squareSizes.MEDIUMPLUS}
+              bgSize="w-full h-16 sm:w-16"
               color={textColors.BLACK}
               bgColor={bgColors.GOLD}
             />
@@ -160,7 +164,7 @@ function MainPage() {
       <SectionPrimitive
         mode={SectionModes.WITHBACKGROUND}
         bgColor={bgColors.GOLD}
-        customHeight="h-[1420px]"
+        customHeight=" h-[2940px] xsm:h-[1950px] sm:h-[1420px]"
       >
         <TypographyPrimitive as="h2" mode={TypographyModes.TITULAR} font={Fonts.GENERAL}>
           {MainPageData.ConditionsSection.title}
@@ -169,7 +173,7 @@ function MainPage() {
           {MainPageData.ConditionsSection.content.map((content) => (
             <div
               key={content.text.slice(0, 5)}
-              className="flex w-full items-start gap-2 text-start"
+              className="flex w-full flex-col items-center gap-2 text-start sm:flex-row sm:items-start xsm:flex-row xsm:items-start"
             >
               <div className="flex flex-col items-center">
                 <div className="rounded-md bg-black">
@@ -183,17 +187,18 @@ function MainPage() {
                 </div>
                 <IconPrimitive
                   spriteId="ArrowDown"
-                  size={squareSizes.LARGE}
-                  bgSize={squareSizes.LARGE}
+                  size="w-40 h-40 sm:w-24 sm:h-24"
+                  bgSize="w-40 h-40 sm:w-24 sm:h-24"
                   bgColor={bgColors.TRANSPARENT}
                 ></IconPrimitive>
               </div>
-              <div className="mt-5 h-full w-full rounded-md bg-black py-5 pl-5">
+              <div className="order-first h-full w-full rounded-md bg-black px-3 py-10 sm:order-last sm:py-7 sm:pl-5 lg:mt-5 lg:py-5 xsm:order-last">
                 <TypographyPrimitive
                   as="p"
                   mode={TypographyModes.LISTLIKE}
                   color={textColors.GOLD}
                   font={Fonts.GENERAL}
+                  fontSize={fontSizes.DEFAULTADAPTIVE}
                 >
                   {content.text}
                 </TypographyPrimitive>
@@ -201,8 +206,9 @@ function MainPage() {
             </div>
           ))}
         </div>
-        <div className="flex items-center justify-start gap-4">
+        <div className="flex flex-col items-center justify-start gap-4 sm:flex-row">
           <ButtonPrimitive
+            mode={ButtonModes.PRIMARYFULL}
             color={textColors.BLACK}
             bgColor={bgColors.TRANSPARENT}
             borderColor={borderColors.BLACK}
@@ -232,7 +238,7 @@ function MainPage() {
         <TypographyPrimitive as="h2" mode={TypographyModes.TITULAR}>
           {MainPageData.ExplanationSection.title}
         </TypographyPrimitive>
-        <div className="mb-5 flex justify-between">
+        <div className="mb-5 flex flex-col items-start justify-between sm:items-center lg:flex-row">
           {MainPageData.ExplanationSection.content.cards.map((card) => (
             <div key={card.point} className="flex-col items-center justify-center">
               <TypographyPrimitive as="h3" mode={TypographyModes.CARDPOINT} color={textColors.GOLD}>

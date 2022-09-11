@@ -17,8 +17,7 @@ module.exports = {
         lightbronze: '#C08741'
       },
       screens: {
-        xsm: '420px',
-        lg: '980px',
+        xsm: {min: '420px', max: '639px'},
         xl: '1440px',
       },
       container: {
@@ -39,13 +38,16 @@ module.exports = {
       backgroundSize: {
         "partial-pattern": "556px",
         "partial-pattern-xl": "450px",
+        "partial-pattern-lg": "340px",
         "partial-pattern-md": "260px",
         "partial-pattern-xsm": "190px",
       },
       backgroundPosition: {
-        "pattern-pos": "-141px 828px",
+        "pattern-pos": "-60px -70px",
+        "pattern-pos-sm": "-60px 330px",
         "pattern-pos-xl": "-135px",
-        "pattern-pos-md": "-60px 125px",
+        "pattern-pos-lg": "-65px 230px",
+        "pattern-pos-md": "-70px 250px",
         "partial-pos-xsm": "-44px -54px"
       }
     },

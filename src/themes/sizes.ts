@@ -7,12 +7,15 @@ export enum squareSizes {
   LARGE = 'w-24 h-24',
   LARGEPLUS = 'w-28 h-28',
   BIG = 'w-40 h-40',
+  BIGADAPTIVE = 'w-24 h-24 lg:w-40 lg:h-40',
   BIGPLUS = 'w-48 h-48',
+  BIGPLUSADAPTIVE = 'w-48 h-48 lg:w-40 lg:h-40',
 }
 
 export enum fontSizes {
   SMALL = 'text-sm',
   DEFAULT = 'text-base',
+  DEFAULTADAPTIVE = 'text-sm sm:text-base',
   LARGE = 'text-lg',
   ULTRALARGE = 'text-5xl',
 }

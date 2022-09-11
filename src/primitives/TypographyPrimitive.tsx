@@ -42,5 +42,6 @@ const TypographyStyleMap = {
   [TypographyModes.LISTLIKE]: 'font-general text-lg tracking-normal text-start',
   [TypographyModes.TITULAR]: 'font-titular text-5xl tracking-wide pt-3 pb-7',
   [TypographyModes.PRIMARYPLUS]: 'font-general text-lg tracking-wide uppercase',
-  [TypographyModes.CARDPOINT]: 'font-titular text-9xl tracking-wide drop-shadow-point-shadow',
+  [TypographyModes.CARDPOINT]:
+    'font-titular text-6xl sm:text-9xl tracking-wide drop-shadow-point-shadow',
 };
