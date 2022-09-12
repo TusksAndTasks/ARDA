@@ -18,6 +18,7 @@ export enum fontSizes {
   DEFAULTADAPTIVE = 'text-sm sm:text-base',
   LARGE = 'text-lg',
   LARGEADAPTIVE = 'text-base md:text-lg',
+  LARGEPLUS = 'text-2xl',
   ULTRALARGE = 'text-5xl',
   ULTRALARGEADAPTIVE = 'text-2xl xsm:text-5xl sm:text-5xl',
 }

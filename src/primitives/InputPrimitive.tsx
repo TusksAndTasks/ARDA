@@ -79,5 +79,5 @@ const InputsStyleMap = {
   [InputModes.RADIOPRIMARY]:
     'bg-current text-black outline-2 outline-offset-4 w-6 h-6 standard-radio',
   [InputModes.RANGEPRIMARY]: 'standard-range',
-  [InputModes.SUBMITPRIMARY]: `w-full h-full px-5 py-2 block focus:outline-none border border-solid text-center overflow-hidden ${bgColors.TRANSPARENT} ${textColors.GOLD} ${hoverTextColors.BLACK} transition-colors duration-300`,
+  [InputModes.SUBMITPRIMARY]: `w-full h-full px-5 py-2 block focus:outline-none border border-solid text-center overflow-hidden ${bgColors.TRANSPARENT} ${textColors.GOLD} ${hoverTextColors.BLACK} transition-colors duration-300 cursor-pointer`,
 };

@@ -2,7 +2,14 @@ import InputPrimitive, { InputModes } from '../../../primitives/InputPrimitive';
 import { inputPlaceholderFunction } from '../../../utils/inputPlaceholderFunction';
 import TypographyPrimitive, { TypographyModes } from '../../../primitives/TypographyPrimitive';
 import React from 'react';
-import { afterBgColors, bgColors } from '../../../themes/colors';
+import {
+  afterBgColors,
+  bgColors,
+  borderColors,
+  hoverTextColors,
+  textColors,
+} from '../../../themes/colors';
+import { Fonts } from '../../../themes/fonts';
 
 interface IProfileFormProps {
   settings: Array<{ descriptor: string; value: string }>;
@@ -11,9 +18,13 @@ interface IProfileFormProps {
 
 function ProfileForm({ settings, closeForm }: IProfileFormProps) {
   return (
-    <div className="fixed top-0 left-0 z-10 flex h-full w-full items-center justify-center bg-black/50">
+    <div
+      className="fixed top-0 left-0 z-10 flex h-full w-full items-center justify-center bg-black/50"
+      onClick={closeForm}
+    >
       <form
-        className="h-11/12 w-1/3 flex-col content-center items-center bg-lightgold px-10"
+        className="h-11/12 flex w-[90%] flex-col gap-5 bg-white p-10 sm:w-2/3 lg:w-1/3"
+        onClick={(e) => e.preventDefault()}
         onSubmit={(e) => {
           e.preventDefault();
           closeForm();
@@ -34,12 +45,12 @@ function ProfileForm({ settings, closeForm }: IProfileFormProps) {
           </TypographyPrimitive>
         ))}
         <div
-          className={` ${bgColors.BLACK} ${afterBgColors.GOLD} button-primary relative overflow-hidden`}
+          className={` ${bgColors.TRANSPARENT} ${afterBgColors.BRONZE} ${borderColors.BRONZE} ${hoverTextColors.LIGHTGOLD} ${textColors.BRONZE} ${Fonts.GENERALMEDIUM} button-primary relative self-center overflow-hidden border-2`}
         >
           <InputPrimitive
             type="submit"
             mode={InputModes.SUBMITPRIMARY}
-            value="submit"
+            value="Подтвердить изменения"
             onChange={inputPlaceholderFunction}
           />
         </div>
