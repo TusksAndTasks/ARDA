@@ -8,10 +8,16 @@ import { afterBgColors, bgColors } from '../themes/colors';
 import { Fonts } from '../themes/fonts';
 import { fontSizes } from '../themes/sizes';
 
-function JoinForm() {
+function JoinForm({ closePopup }: { closePopup: () => void }) {
   return (
-    <div className="fixed top-0 left-0 z-10 flex h-full w-full items-center justify-center bg-black/50">
-      <form className="flex max-h-[96%] w-[90%] flex-col gap-1 overflow-y-auto bg-white px-10 py-4 lg:w-[70%] xl:w-1/3">
+    <div
+      className="fixed top-0 left-0 z-10 flex h-full w-full items-center justify-center bg-black/50"
+      onClick={closePopup}
+    >
+      <form
+        className="custom-scrollbar-item flex max-h-[96%] w-[90%] flex-col gap-1 overflow-y-auto bg-white px-10 py-4 lg:w-[70%] xl:w-1/3"
+        onClick={(e) => e.stopPropagation()}
+      >
         <TypographyPrimitive as="h2" mode={TypographyModes.TITULAR} fontSize={fontSizes.ULTRALARGE}>
           {JoinFormData.title}
         </TypographyPrimitive>

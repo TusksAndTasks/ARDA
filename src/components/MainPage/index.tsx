@@ -34,9 +34,6 @@ function MainPage() {
   const [cardsOpen, setCardsOpen] = useState<Array<string>>([]);
   const toggleCardsDisplay = toggleItemDisplay(cardsOpen, setCardsOpen);
 
-  //TODO: вот это точно объединить в один стейт с массивом строк
-  const [isModalOpen, setIsModelOpen] = useState(false);
-
   return (
     <div className="container px-10">
       <MainPageSprite className="hidden" />
@@ -234,7 +231,7 @@ function MainPage() {
             hoverTextColor={hoverTextColors.GOLD}
             additionalClasses="relative"
             onClick={() => {
-              setIsModelOpen(!isModalOpen);
+              setActivePopup(popupIds.JOINFORM);
             }}
           >
             <TypographyPrimitive mode={TypographyModes.PRIMARYPLUS} font={Fonts.GENERAL}>
@@ -310,7 +307,7 @@ function MainPage() {
           </ButtonPrimitive>
         </div>
       </SectionPrimitive>
-      {isModalOpen && <JoinForm />}
+      {activePopupId === popupIds.JOINFORM && <JoinForm closePopup={closePopup} />}
       {activePopupId === popupIds.AUTH && (
         <PopupPrimitive closePopup={closePopup}>
           <TypographyPrimitive as="p" mode={TypographyModes.PRIMARYPLUS}>

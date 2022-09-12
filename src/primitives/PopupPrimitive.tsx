@@ -12,7 +12,7 @@ function PopupPrimitive({ closePopup, children }: IPopupPrimitiveProps) {
       onClick={closePopup}
     >
       <div
-        className="flex h-auto w-1/4 flex-col items-center gap-2 bg-white p-5"
+        className="flex h-auto w-[80%] flex-col items-center gap-2 bg-white p-5 sm:w-1/2 md:w-1/4"
         onClick={(e) => {
           e.stopPropagation();
         }}

@@ -21,7 +21,12 @@ function Header() {
     <header className="flex flex-col items-center justify-between bg-black px-10 sm:flex-row xsm:flex-row">
       <HeaderSprite className="hidden" />
       <NavLink to={userRole === rolesEnum.NONAUTHORIZED ? '' : 'cabinet'}>
-        <ButtonPrimitive mode={ButtonModes.SIMPLE} onClick={() => setPopup(popupIds.AUTH)}>
+        <ButtonPrimitive
+          mode={ButtonModes.SIMPLE}
+          onClick={() =>
+            setPopup(userRole === rolesEnum.NONAUTHORIZED ? popupIds.AUTH : popupIds.NONE)
+          }
+        >
           <div className="flex items-center">
             <IconPrimitive
               bgColor={bgColors.TRANSPARENT}
