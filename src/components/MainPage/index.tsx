@@ -41,7 +41,11 @@ function MainPage() {
     <div className="container px-10">
       <MainPageSprite className="hidden" />
       <SectionPrimitive>
-        <TypographyPrimitive as="h1" mode={TypographyModes.TITULAR}>
+        <TypographyPrimitive
+          as="h1"
+          mode={TypographyModes.TITULAR}
+          fontSize={fontSizes.ULTRALARGEADAPTIVE}
+        >
           {MainPageData.TitularSection.title}
         </TypographyPrimitive>
         <TypographyPrimitive
@@ -59,7 +63,11 @@ function MainPage() {
         customHeight="h-[900px] sm:h-[450px] xsm:h-[640px] xl:h-[270px] md:h-[420px] "
       >
         <div className="flex flex-col items-center gap-3">
-          <TypographyPrimitive as="h2" mode={TypographyModes.TITULAR}>
+          <TypographyPrimitive
+            as="h2"
+            mode={TypographyModes.TITULAR}
+            fontSize={fontSizes.ULTRALARGE}
+          >
             {MainPageData.MainPointSection.title}
           </TypographyPrimitive>
           {MainPageData.MainPointSection.content.map((text) => (
@@ -77,7 +85,7 @@ function MainPage() {
         </div>
       </SectionPrimitive>
       <SectionPrimitive mode={SectionModes.ICONLIST}>
-        <TypographyPrimitive as="h2" mode={TypographyModes.TITULAR}>
+        <TypographyPrimitive as="h2" mode={TypographyModes.TITULAR} fontSize={fontSizes.ULTRALARGE}>
           {MainPageData.ProblemsSection.title}
         </TypographyPrimitive>
         {MainPageData.ProblemsSection.content.map((content) => (
@@ -103,7 +111,12 @@ function MainPage() {
         mode={SectionModes.WITHBACKGROUND}
         customHeight="h-[875px] xsm:h-[500px] sm:h-[330px]"
       >
-        <TypographyPrimitive as="h2" mode={TypographyModes.TITULAR} color={textColors.GOLD}>
+        <TypographyPrimitive
+          as="h2"
+          mode={TypographyModes.TITULAR}
+          fontSize={fontSizes.ULTRALARGE}
+          color={textColors.GOLD}
+        >
           {MainPageData.MissionSection.title}
         </TypographyPrimitive>
         <div className="flex flex-col flex-wrap items-center justify-between gap-5 sm:flex-row sm:flex-nowrap xsm:flex-row">
@@ -140,7 +153,7 @@ function MainPage() {
         </div>
       </SectionPrimitive>
       <SectionPrimitive mode={SectionModes.ICONLIST}>
-        <TypographyPrimitive as="h2" mode={TypographyModes.TITULAR}>
+        <TypographyPrimitive as="h2" mode={TypographyModes.TITULAR} fontSize={fontSizes.ULTRALARGE}>
           {MainPageData.ProfitSection.title}
         </TypographyPrimitive>
         {MainPageData.ProfitSection.content.map((content) => (
@@ -166,7 +179,12 @@ function MainPage() {
         bgColor={bgColors.GOLD}
         customHeight=" h-[2940px] xsm:h-[1950px] sm:h-[1420px]"
       >
-        <TypographyPrimitive as="h2" mode={TypographyModes.TITULAR} font={Fonts.GENERAL}>
+        <TypographyPrimitive
+          as="h2"
+          mode={TypographyModes.TITULAR}
+          fontSize={fontSizes.ULTRALARGE}
+          font={Fonts.GENERAL}
+        >
           {MainPageData.ConditionsSection.title}
         </TypographyPrimitive>
         <div className="pl-5">
@@ -229,13 +247,13 @@ function MainPage() {
         </div>
       </SectionPrimitive>
       <SectionPrimitive>
-        <TypographyPrimitive as="h2" mode={TypographyModes.TITULAR}>
+        <TypographyPrimitive as="h2" fontSize={fontSizes.ULTRALARGE} mode={TypographyModes.TITULAR}>
           {MainPageData.PartnersSection.title}
         </TypographyPrimitive>
         <PartnersList />
       </SectionPrimitive>
       <SectionPrimitive>
-        <TypographyPrimitive as="h2" mode={TypographyModes.TITULAR}>
+        <TypographyPrimitive as="h2" fontSize={fontSizes.ULTRALARGE} mode={TypographyModes.TITULAR}>
           {MainPageData.ExplanationSection.title}
         </TypographyPrimitive>
         <div className="mb-5 flex flex-col items-start justify-between sm:items-center lg:flex-row">
@@ -264,8 +282,8 @@ function MainPage() {
         </ButtonPrimitive>
       </SectionPrimitive>
       <SectionPrimitive>
-        <div className="flex items-center justify-between py-8">
-          <div className="flex-col items-start justify-between">
+        <div className="flex flex-col items-center justify-between py-8 sm:flex-row">
+          <div className="flex-col justify-between text-center sm:text-start">
             <TypographyPrimitive as="p" mode={TypographyModes.PRIMARYPLUS} font={Fonts.GENERAL}>
               {MainPageData.DonateSection.content.question}
             </TypographyPrimitive>
@@ -335,7 +353,11 @@ function MainPage() {
       )}
       {activePopupId === popupIds.PASSWORD && (
         <PopupPrimitive closePopup={closePopup}>
-          <TypographyPrimitive as="h2" mode={TypographyModes.TITULAR}>
+          <TypographyPrimitive
+            as="h2"
+            fontSize={fontSizes.ULTRALARGE}
+            mode={TypographyModes.TITULAR}
+          >
             Забыли пароль?
           </TypographyPrimitive>
           <TypographyPrimitive as="p">

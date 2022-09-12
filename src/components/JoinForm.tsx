@@ -11,8 +11,8 @@ import { fontSizes } from '../themes/sizes';
 function JoinForm() {
   return (
     <div className="fixed top-0 left-0 z-10 flex h-full w-full items-center justify-center bg-black/50">
-      <form className="flex max-h-[1000px] w-1/3 flex-col gap-1 overflow-y-auto bg-white px-10 py-4">
-        <TypographyPrimitive as="h2" mode={TypographyModes.TITULAR}>
+      <form className="flex max-h-[96%] w-[90%] flex-col gap-1 overflow-y-auto bg-white px-10 py-4 lg:w-[70%] xl:w-1/3">
+        <TypographyPrimitive as="h2" mode={TypographyModes.TITULAR} fontSize={fontSizes.ULTRALARGE}>
           {JoinFormData.title}
         </TypographyPrimitive>
         <TypographyPrimitive as="p" mode={TypographyModes.PRIMARY}>
@@ -101,7 +101,7 @@ function JoinForm() {
           </TypographyPrimitive>
         ))}
         <div
-          className={` ${bgColors.BLACK} ${afterBgColors.GOLD} button-primary relative cursor-pointer self-center overflow-hidden`}
+          className={` ${bgColors.BLACK} ${afterBgColors.GOLD} button-primary relative min-h-[40px] cursor-pointer self-center overflow-hidden`}
         >
           <InputPrimitive
             type="submit"

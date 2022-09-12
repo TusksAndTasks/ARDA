@@ -18,7 +18,7 @@ function Header() {
   const [, setPopup] = usePopups();
 
   return (
-    <header className="flex items-center justify-between bg-black px-10">
+    <header className="flex flex-col items-center justify-between bg-black px-10 sm:flex-row xsm:flex-row">
       <HeaderSprite className="hidden" />
       <NavLink to={userRole === rolesEnum.NONAUTHORIZED ? '' : 'cabinet'}>
         <ButtonPrimitive mode={ButtonModes.SIMPLE} onClick={() => setPopup(popupIds.AUTH)}>
@@ -29,13 +29,23 @@ function Header() {
               color={textColors.GOLD}
               spriteId={userRole === rolesEnum.NONAUTHORIZED ? 'LogIn' : 'ToCabinet'}
             ></IconPrimitive>
-            <TypographyPrimitive as="p" mode={TypographyModes.PRIMARYPLUS} color={textColors.GOLD}>
-              {userRole === rolesEnum.NONAUTHORIZED ? 'Войти' : 'В личный кабинет'}
-            </TypographyPrimitive>
+            <div className="block sm:block xsm:hidden">
+              <TypographyPrimitive
+                as="p"
+                mode={TypographyModes.PRIMARYPLUS}
+                color={textColors.GOLD}
+              >
+                {userRole === rolesEnum.NONAUTHORIZED ? 'Войти' : 'В личный кабинет'}
+              </TypographyPrimitive>
+            </div>
           </div>
         </ButtonPrimitive>
       </NavLink>
-      <img src="/logos/ITARDA-logo.png" alt="ARDA logo" className="filter-gold w-32" />
+      <img
+        src="/logos/ITARDA-logo.png"
+        alt="ARDA logo"
+        className="filter-gold order-first w-32  sm:order-none xsm:order-none"
+      />
       <LinkPrimitive href="mailto:it@arda.digital">
         <TypographyPrimitive mode={TypographyModes.PRIMARYPLUS} color={textColors.GOLD}>
           it@arda.digital
