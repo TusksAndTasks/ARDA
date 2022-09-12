@@ -33,7 +33,8 @@ module.exports = {
         'gold': 'invert(93%) sepia(7%) saturate(6422%) hue-rotate(329deg) brightness(99%) contrast(100%)'
       },
       backgroundImage: {
-        'triangle-pattern': "url('../public/images/pattern.png')"
+        'triangle-pattern': "url('../public/images/pattern.png')",
+        'cluster-pattern': "url('../public/logos/ITARDA-logo.png')"
       },
       backgroundSize: {
         "partial-pattern": "556px",
@@ -43,6 +44,7 @@ module.exports = {
         "partial-pattern-xsm": "190px",
       },
       backgroundPosition: {
+        "pattern-pos-center": "center 170px",
         "pattern-pos": "-60px -70px",
         "pattern-pos-sm": "-60px 330px",
         "pattern-pos-xl": "-135px",

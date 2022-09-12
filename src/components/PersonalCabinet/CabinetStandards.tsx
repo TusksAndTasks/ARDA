@@ -5,7 +5,7 @@ import { GlobalState } from '../../redux/store';
 import { rolesEnum } from '../../redux/slices/rolesSliceTypes';
 import LinkPrimitive from '../../primitives/LinkPrimitive';
 import { afterBgColors, borderColors, hoverTextColors, textColors } from '../../themes/colors';
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import Warning from './Warning';
 import PopupPrimitive from '../../primitives/PopupPrimitive';
 import ButtonPrimitive from '../../primitives/ButtonPrimitive';
@@ -19,6 +19,7 @@ function CabinetStandards() {
   const [closePopup, setActivePopup, activePopupId] = usePopups();
   const [activeStandardId, setActiveStandardId] = useState<string[]>([]);
   const toggleStandardDisplay = toggleItemDisplay(activeStandardId, setActiveStandardId);
+  const activatePopup = useCallback(() => setActivePopup(popupIds.WEBINARSJOIN), []);
 
   return (
     <div className="ml-2.5 flex w-full flex-col">
@@ -29,8 +30,8 @@ function CabinetStandards() {
       >
         {StandardsData.title}
       </TypographyPrimitive>
-      <div className="box-like relative w-[90%] bg-bronze pb-52 before:absolute before:-right-[10px] before:bottom-[200px] before:z-10 before:block before:h-[2px] before:bg-black after:absolute after:-right-[10px] after:bottom-0 after:block after:h-[308px] after:w-[10px] after:border-l-2 after:border-black after:bg-bronze lg:w-1/2">
-        {StandardsData.standards.map((standard) => {
+      <div className="box-like relative mb-3  w-[90%] bg-bronze bg-cluster-pattern bg-partial-pattern-xsm  bg-pattern-pos-center bg-no-repeat pb-52 before:absolute before:-right-[10px] before:bottom-[200px] before:z-10 before:block before:h-[2px] before:bg-black after:absolute after:-right-[10px] after:bottom-0 after:block after:h-[308px] after:w-[10px] after:border-l-2 after:border-black after:bg-bronze lg:w-1/2">
+        {StandardsData.standards.map((standard, standardIndex) => {
           const isLink = userRole !== rolesEnum.COMMUNITYMEMBER && standard.link;
           const isWarning = userRole === rolesEnum.COMMUNITYMEMBER && standard.link;
           return (
@@ -74,9 +75,13 @@ function CabinetStandards() {
                 </TypographyPrimitive>
               </div>
               {isWarning && (
-                <div className=" -mt-2.5 flex justify-center pb-2.5">
+                <div
+                  className={`flex justify-center  ${
+                    standardIndex === StandardsData.standards.length - 1 ? '' : '-mt-2.5 pb-2.5'
+                  }`}
+                >
                   <Warning
-                    onClick={() => setActivePopup(popupIds.STANDARDSJOIN)}
+                    onClick={activatePopup}
                     warningText={StandardsData.warning.text}
                     prompt={StandardsData.warning.prompt}
                   />
