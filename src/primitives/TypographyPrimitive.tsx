@@ -1,5 +1,5 @@
 import React from 'react';
-import { textColors } from '../themes/colors';
+import { hoverTextColors, textColors } from '../themes/colors';
 import { fontSizes } from '../themes/sizes';
 import { Fonts } from '../themes/fonts';
 
@@ -10,6 +10,7 @@ interface ITypographyProps {
   fontSize?: fontSizes;
   font?: Fonts;
   color?: textColors;
+  hoverColor?: hoverTextColors;
 }
 
 export enum TypographyModes {
@@ -24,13 +25,14 @@ function TypographyPrimitive({
   as = 'span',
   mode = TypographyModes.PRIMARY,
   color,
+  hoverColor,
   fontSize,
   font,
   children,
 }: ITypographyProps) {
   return React.createElement(
     as,
-    { className: `${TypographyStyleMap[mode]} ${color} ${fontSize} ${font}` },
+    { className: `${TypographyStyleMap[mode]} ${color} ${fontSize} ${font} ${hoverColor}` },
     children
   );
 }
