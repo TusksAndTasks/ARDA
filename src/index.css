@@ -168,5 +168,9 @@
     .custom-scrollbar-item::-webkit-scrollbar-thumb{
         background-color: #FBBC32;
     }
+
+    .box-like:before{
+        width: calc(100% + 10px);
+    }
 }
 

@@ -50,7 +50,11 @@ function Webinars() {
             </TypographyPrimitive>
             {isWarning && (
               <div className="flex justify-center">
-                <Warning onClick={() => setActivePopup(popupIds.WEBINARSJOIN)} />
+                <Warning
+                  onClick={() => setActivePopup(popupIds.WEBINARSJOIN)}
+                  warningText={WebinarsData.warning.text}
+                  prompt={WebinarsData.warning.prompt}
+                />
               </div>
             )}
           </div>
