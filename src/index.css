@@ -23,9 +23,19 @@
 @tailwind utilities;
 
 @layer components {
+    .vertical-container-lg{
+        min-height: calc(100vh - 176px);
+        max-height: calc(100vh - 176px);
+    }
+
+    .vertical-container-sm{
+        min-height: calc(100vh - 200px);
+        max-height: calc(100vh - 200px);
+    }
+
     .vertical-container{
-        min-height: calc(100vh - 152px);
-        max-height: calc(100vh - 152px);
+        min-height: calc(100vh - 383px);
+        max-height: calc(100vh - 383px);
     }
 
     .horizontal-container{

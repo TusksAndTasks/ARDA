@@ -5,7 +5,7 @@ import { textColors } from '../themes/colors';
 
 function Footer() {
   return (
-    <footer className="flex items-center justify-between bg-black px-20">
+    <footer className="flex h-auto items-center justify-between bg-black px-20 md:h-[124px] lg:h-auto">
       <div className="flex w-full flex-col items-center justify-between text-center">
         <TypographyPrimitive as="p" mode={TypographyModes.PRIMARY} color={textColors.WHITE}>
           ARDA (с)

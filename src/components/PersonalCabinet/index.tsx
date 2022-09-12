@@ -12,7 +12,7 @@ import CabinetStandards from './CabinetStandards';
 
 function PersonalCabinet() {
   return (
-    <div className="vertical-container flex">
+    <div className="sm:vertical-container-sm lg:vertical-container-lg  custom-scrollbar-item flex h-full overflow-y-auto">
       <CabinetNavigation />
       <Routes>
         <Route path="/" element={<Summary />}></Route>

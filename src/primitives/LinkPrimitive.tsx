@@ -21,5 +21,5 @@ function LinkPrimitive({ mode = linkModes.PRIMARY, href, children }: ILinkPrimit
 export default React.memo(LinkPrimitive);
 
 const linkStylesMap = {
-  [linkModes.PRIMARY]: 'appearance-none no-underline',
+  [linkModes.PRIMARY]: 'appearance-none no-underline mx-1',
 };
