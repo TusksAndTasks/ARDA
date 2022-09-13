@@ -18,10 +18,11 @@ export default function useResources() {
       );
       continue;
     }
-    resourceList = resourceList.filter(
-      (resource) =>
-        resource[resourceKey as keyof typeof resourceFilters] ===
-        resourceFilters[resourceKey as keyof typeof resourceFilters]
+    resourceList = resourceList.filter((resource) =>
+      resourceFilters[resourceKey as keyof typeof resourceFilters]
+        ? resource[resourceKey as keyof typeof resourceFilters] ===
+          resourceFilters[resourceKey as keyof typeof resourceFilters]
+        : true
     );
   }
 

@@ -20,6 +20,7 @@ interface InputPrimitiveProps {
 
 export enum InputModes {
   CHECKBOXPRIMARY = 'CHECKBOXPRIMARY',
+  CHECKBOXRADIOLIKE = 'CHECKBOXRADIOLIKE',
   TEXTPRIMARY = 'TEXTPRIMARY',
   RADIOPRIMARY = 'RADIOPRIMARY',
   RANGEPRIMARY = 'RANGEPRIMARY',
@@ -74,10 +75,12 @@ export default React.memo(InputPrimitive);
 const InputsStyleMap = {
   [InputModes.CHECKBOXPRIMARY]:
     'bg-current text-black outline-2 outline-offset-4 w-6 h-6 standard-checkbox',
+  [InputModes.CHECKBOXRADIOLIKE]:
+    'bg-current text-black outline-2 outline-offset-4 w-6 h-6 standard-radio rounded-2xl mr-1',
   [InputModes.TEXTPRIMARY]:
     'mt-0 block w-full px-0.5 border-0 bg-transparent border-b-2 border-black focus:ring-0 focus:border-gold',
   [InputModes.RADIOPRIMARY]:
     'bg-current text-black outline-2 outline-offset-4 w-6 h-6 standard-radio',
   [InputModes.RANGEPRIMARY]: 'standard-range',
-  [InputModes.SUBMITPRIMARY]: `w-full h-full px-5 py-2 block focus:outline-none border border-solid text-center overflow-hidden ${bgColors.TRANSPARENT} ${textColors.GOLD} ${hoverTextColors.BLACK} transition-colors duration-300 cursor-pointer`,
+  [InputModes.SUBMITPRIMARY]: `w-full h-full px-5 py-2 block focus:outline-none text-center overflow-hidden ${bgColors.TRANSPARENT} ${textColors.GOLD} ${hoverTextColors.BLACK} transition-colors duration-300 cursor-pointer`,
 };

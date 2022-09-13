@@ -15,8 +15,10 @@ interface ITypographyProps {
 
 export enum TypographyModes {
   PRIMARY = 'PRIMARY',
+  PRTIMARYVERTICAL = 'PRTIMARYVERTICAL',
   PRIMARYPLUS = 'PRIMARYPLUS',
   TITULAR = 'TITULAR',
+  TITULARSHADOW = 'TITULARSHADOW',
   LISTLIKE = 'LISTLIKE',
   CARDPOINT = 'CARDPOINT',
 }
@@ -40,9 +42,11 @@ function TypographyPrimitive({
 export default React.memo(TypographyPrimitive);
 
 const TypographyStyleMap = {
-  [TypographyModes.PRIMARY]: 'tracking-normal normal-case',
+  [TypographyModes.PRIMARY]: 'tracking-normal normal-case break-words',
+  [TypographyModes.PRTIMARYVERTICAL]: 'tracking-wide normal-case lg:text-vertical',
   [TypographyModes.LISTLIKE]: 'font-general text-lg tracking-normal text-start',
   [TypographyModes.TITULAR]: 'font-titular tracking-wide pt-3 pb-7',
+  [TypographyModes.TITULARSHADOW]: 'font-titular tracking-wide drop-shadow-light-point-shadow',
   [TypographyModes.PRIMARYPLUS]: 'font-general text-lg tracking-wide uppercase',
   [TypographyModes.CARDPOINT]:
     'font-titular text-6xl sm:text-9xl tracking-wide drop-shadow-point-shadow',

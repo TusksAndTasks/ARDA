@@ -77,6 +77,46 @@
         transition-delay: 0.175s;
     }
 
+    .text-vertical{
+        writing-mode: vertical-lr;
+        transform: rotate(180deg);
+    }
+
+    .button-vertical {
+        min-width: 80px;
+        max-width: 250px;
+        z-index: 1;
+        -webkit-backface-visibility: hidden;
+        -moz-osx-font-smoothing: grayscale;
+        -webkit-transition: color 0.3s;
+        transition: color 0.3s;
+    }
+
+    .button-vertical::after {
+        content: '';
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 100%;
+        z-index: -1;
+        -webkit-transition: -webkit-transform 0.6s;
+        transition: transform 0.6s;
+        -webkit-transition-timing-function: cubic-bezier(.15, 1.82, .7, .4);;
+        transition-timing-function: cubic-bezier(.15, 1.82, .7, .4);;
+    }
+
+    .button-vertical:hover::after {
+        -webkit-transform: translate3d(-100%, 0, 0);
+        transform: translate3d(-100%, 0, 0);
+    }
+
+    .button-vertical:hover::after {
+        -webkit-transition-delay: 0.175s;
+        transition-delay: 0.175s;
+    }
+
+
     .filter-gold {
         filter: invert(93%) sepia(7%) saturate(6422%) hue-rotate(329deg) brightness(99%) contrast(100%);
     }

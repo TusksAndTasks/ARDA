@@ -51,10 +51,14 @@ module.exports = {
         "pattern-pos-lg": "-65px 230px",
         "pattern-pos-md": "-70px 250px",
         "partial-pos-xsm": "-44px -54px"
+      },
+      boxShadow: {
+        'strict-bronze-shadow': '5px 5px 0px -1px #894500'
       }
     },
     dropShadow: {
-      'point-shadow': '5px 0px 0px #000'
+      'point-shadow': '5px 0px 0px #000',
+      'light-point-shadow': '2px 0px 0px #4e4949'
     },
 
   },
