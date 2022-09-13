@@ -15,7 +15,7 @@ function FullCompanyCard({ resource }: { resource: null | IResource }) {
   const toggleCommentaryDisplay = toggleItemDisplay(openCommentary, setOpenCommentary);
 
   return resource ? (
-    <div className=" border-1 custom-scrollbar-item my-8 ml-2 box-border flex w-[87%] flex-col gap-3 overflow-y-auto rounded-xl border-lightgold bg-black p-2 outline outline-4 outline-offset-2 outline-black sm:ml-4 sm:p-4 lg:w-full lg:w-[45%] xl:ml-14 xl:w-[66%]">
+    <div className=" border-1 custom-scrollbar-item my-8 ml-2 box-border flex w-[87%] flex-col gap-3 overflow-y-auto rounded-xl border-lightgold bg-black p-2 outline outline-4 outline-offset-2 outline-black sm:ml-4 sm:p-4 lg:w-full lg:w-[45%] xl:ml-14 xl:w-[59%]">
       <ResourcesSprite className="hidden" />
       <TypographyPrimitive
         as="h2"
@@ -400,7 +400,7 @@ function FullCompanyCard({ resource }: { resource: null | IResource }) {
       <RedactForm />
     </div>
   ) : (
-    <div className="ml-4 w-full lg:w-[45%] xl:ml-14 xl:w-[70%]">
+    <div className="ml-4 w-full lg:w-[45%] xl:ml-14 xl:w-[59%]">
       <TypographyPrimitive
         as="h2"
         mode={TypographyModes.TITULAR}

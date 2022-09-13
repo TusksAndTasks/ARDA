@@ -209,8 +209,8 @@
         background-color: #FBBC32;
     }
 
-    .box-like:before{
-        width: calc(100% + 10px);
+    .box-like:after{
+        transform: rotateY(20deg) skewY(-25deg);
     }
 }
 

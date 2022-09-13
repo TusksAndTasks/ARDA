@@ -30,14 +30,14 @@ function Webinars() {
       >
         {WebinarsData.title}
       </TypographyPrimitive>
-      <div className="box-like relative mb-3 w-[90%] bg-bronze bg-cluster-pattern bg-partial-pattern-xsm bg-pattern-pos-center bg-no-repeat pb-52 before:absolute before:-right-[10px] before:bottom-[200px] before:z-10 before:block before:h-[2px] before:bg-black after:absolute after:-right-[10px] after:bottom-0 after:block after:h-[308px] after:w-[10px] after:border-l-2 after:border-black after:bg-bronze lg:w-1/2">
+      <div className="w-[90%] lg:w-1/2">
         {WebinarsData.webinars.map((webinar, webinarIndex) => {
           const isLink = userRole !== rolesEnum.COMMUNITYMEMBER && webinar.link;
           const isWarning = userRole === rolesEnum.COMMUNITYMEMBER && webinar.link;
           return (
             <div
               key={webinar.title}
-              className={`-mt-2.5 flex w-full cursor-pointer flex-col gap-2 overflow-hidden rounded-t-lg border-2 border-b-0 border-lightgold bg-black px-2 transition-all duration-500   ${
+              className={`-mt-2.5 flex cursor-pointer flex-col gap-2 overflow-hidden rounded-t-lg border-2 border-b-0 border-lightgold bg-black px-2 transition-all duration-500  ${
                 activeWebinarId.includes(webinar.title) ? 'z-10 max-h-[1000px]' : 'max-h-[36px]'
               }`}
               onClick={() => toggleWebinarDisplay(webinar.title)}
@@ -82,6 +82,7 @@ function Webinars() {
           );
         })}
       </div>
+      <div className="box-like relative mb-3 w-[90%] bg-bronze bg-cluster-pattern bg-partial-pattern-xsm  bg-pattern-pos-center bg-no-repeat pb-52 before:absolute before:-right-[10px] before:bottom-[209px] before:-z-10 before:block before:h-[6px] before:w-[10px] before:bg-black after:absolute after:-right-[10px] after:bottom-[3px] after:block after:h-full after:w-[10px] after:border-l-2 after:border-black after:bg-lightbronze lg:w-1/2"></div>
 
       {activePopupId === popupIds.WEBINARSJOIN && (
         <PopupPrimitive closePopup={closePopup}>

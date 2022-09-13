@@ -44,7 +44,7 @@ module.exports = {
         "partial-pattern-xsm": "190px",
       },
       backgroundPosition: {
-        "pattern-pos-center": "center 170px",
+        "pattern-pos-center": "center",
         "pattern-pos": "-60px -70px",
         "pattern-pos-sm": "-60px 330px",
         "pattern-pos-xl": "-135px",

@@ -14,7 +14,7 @@ function Warning({
   prompt: string;
 }) {
   return (
-    <div className="flex w-full flex-col items-center justify-between rounded-t-lg bg-bronze text-center sm:w-2/3 lg:w-1/3">
+    <div className="flex w-full flex-col items-center justify-between rounded-t-lg bg-lightbronze text-center sm:w-2/3 lg:w-1/3">
       <TypographyPrimitive as="p" mode={TypographyModes.PRIMARY} font={Fonts.GENERALMEDIUM}>
         {warningText}
       </TypographyPrimitive>

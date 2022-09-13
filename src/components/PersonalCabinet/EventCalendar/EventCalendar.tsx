@@ -21,7 +21,7 @@ function EventCalendar() {
   return (
     <div
       className={`relative flex w-[80%] flex-col transition-all sm:w-full lg:flex-row  ${
-        isFilterOpen ? '' : '-translate-y-[400px] lg:-translate-x-[170px] lg:-translate-y-0'
+        isFilterOpen ? '' : '-translate-y-[400px] lg:-translate-x-[200px] lg:-translate-y-0'
       }`}
     >
       <FiltersForm />
