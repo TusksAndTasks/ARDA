@@ -3,7 +3,7 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 export interface IEvent {
   name: string;
-  type: string;
+  type: Array<string>;
   startDate: string;
   endDate: string;
   city?: Array<string>;
@@ -24,7 +24,7 @@ export interface IEventYear {
 }
 
 interface IEventsFilters {
-  type?: string;
+  type?: Array<string>;
   startDate?: string;
   endDate?: string;
   city?: Array<string>;

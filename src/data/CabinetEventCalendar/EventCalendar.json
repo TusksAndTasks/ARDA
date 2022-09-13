@@ -7,7 +7,7 @@
       "events": [
         {
           "name": "Первый эвент",
-          "type": "offline",
+          "type": ["offline"],
           "startDate": "23.11.2021 19:00",
           "endDate": "23.11.2021 21:00",
           "city":["Ростов"] ,
@@ -20,7 +20,7 @@
         },
         {
           "name": "Второй эвент",
-          "type": "offline",
+          "type": ["offline"],
           "startDate": "23.11.2021 19:00",
           "endDate": "23.11.2021 21:00",
           "city":["Ростов"] ,
@@ -47,7 +47,7 @@
         "events": [
           {
             "name": "Эвент января",
-            "type": "online",
+            "type": ["online"],
             "startDate": "23.01.2022 18:00",
             "endDate": "23.01.2022 21:00",
             "city":[],
@@ -65,10 +65,10 @@
         "events": [
           {
             "name": "Эвент февраля",
-            "type": "offline",
+            "type": ["offline"],
             "startDate": "25.02.2022 18:00",
             "endDate": "26.02.2022 21:00",
-            "city":["Moscow"],
+            "city":["Москва"],
             "link": "febev.com",
             "description": "Февральский онлайн-эвент",
             "transcript": "febev.cpm/tanscript",

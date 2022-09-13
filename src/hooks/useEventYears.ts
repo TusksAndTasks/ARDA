@@ -15,13 +15,19 @@ export default function useEventYears() {
     if (Array.isArray(eventFilters[filterName as keyof typeof eventFilters])) {
       filteredYears.forEach((year, yearIndex) => {
         year.months.forEach((month, monthIndex) => {
-          (eventFilters[filterName as keyof typeof eventFilters] as Array<string>).forEach(
-            (filter) => {
-              filteredYears[yearIndex].months[monthIndex].events = month.events.filter((event) =>
-                (event[filterName as keyof typeof eventFilters] as Array<string>).includes(filter)
-              );
-            }
-          );
+          filteredYears[yearIndex].months[monthIndex].events = month.events.filter((event) => {
+            let isCorrect = false;
+            (event[filterName as keyof typeof eventFilters] as Array<string>).forEach((entry) => {
+              isCorrect =
+                (eventFilters[filterName as keyof typeof eventFilters] as Array<string>).length ===
+                0
+                  ? true
+                  : (
+                      eventFilters[filterName as keyof typeof eventFilters] as Array<string>
+                    ).includes(entry);
+            });
+            return isCorrect;
+          });
         });
       });
       continue;

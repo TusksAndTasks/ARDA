@@ -7,6 +7,7 @@ import { afterBgColors, bgColors } from '../../../themes/colors';
 import { inputPlaceholderFunction } from '../../../utils/inputPlaceholderFunction';
 import React from 'react';
 import { updateEventFilters } from '../../../redux/slices/CalendarSlice';
+import { fontSizes } from '../../../themes/sizes';
 
 function FiltersForm() {
   const initialFilters = useSelector((state: GlobalState) => state.eventYears.eventFilters);
@@ -20,7 +21,7 @@ function FiltersForm() {
         e.preventDefault();
         dispatch(updateEventFilters(eventFilters));
       }}
-      className="relative z-10 flex h-full w-[200px] flex-col items-start justify-between bg-lightgold"
+      className="custom-scrollbar-item relative z-10 flex h-[400px] w-[95%] flex-col items-start justify-between overflow-y-auto overflow-x-hidden bg-white py-2 pl-3 lg:h-full lg:w-[200px]"
     >
       {Object.keys(FiltersData).map((filterKey) => {
         const filterName = FiltersData[filterKey as keyof typeof FiltersData];
@@ -29,7 +30,12 @@ function FiltersForm() {
           return (
             <div key={filterKey} className="my-2 flex flex-col">
               {(filterName as Array<string>).map((option) => (
-                <TypographyPrimitive as="label" mode={TypographyModes.PRIMARYPLUS} key={option}>
+                <TypographyPrimitive
+                  as="label"
+                  mode={TypographyModes.PRIMARYPLUS}
+                  fontSize={fontSizes.DEFAULTADAPTIVE}
+                  key={option}
+                >
                   <InputPrimitive
                     type="checkbox"
                     mode={InputModes.RADIOPRIMARY}
@@ -61,7 +67,12 @@ function FiltersForm() {
           );
         }
         return (
-          <TypographyPrimitive as="label" mode={TypographyModes.PRIMARYPLUS} key={filterName}>
+          <TypographyPrimitive
+            as="label"
+            mode={TypographyModes.PRIMARYPLUS}
+            fontSize={fontSizes.DEFAULTADAPTIVE}
+            key={filterName}
+          >
             <InputPrimitive
               type="date"
               value={
@@ -79,12 +90,12 @@ function FiltersForm() {
         );
       })}
       <div
-        className={` ${bgColors.BLACK} ${afterBgColors.GOLD} button-primary relative overflow-hidden`}
+        className={` ${bgColors.BLACK} ${afterBgColors.GOLD} button-primary relative -ml-3 min-h-[40px] self-center overflow-hidden`}
       >
         <InputPrimitive
           type="submit"
           mode={InputModes.SUBMITPRIMARY}
-          value="submit"
+          value="Применить"
           onChange={inputPlaceholderFunction}
         />
       </div>
