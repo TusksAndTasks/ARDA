@@ -33,6 +33,7 @@ export enum hoverTextColors {
   LIGHTBRONZE = 'hover:text-lightbronze',
   WHITE = 'hover:text-white',
   BLACK = 'hover:text-black',
+  NONE = '',
 }
 
 export enum borderColors {

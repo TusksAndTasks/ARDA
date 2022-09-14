@@ -9,6 +9,7 @@ import IconPrimitive from '../../../primitives/IconPrimitive';
 import { ReactComponent as ResourcesSprite } from '../../../data/CabinetResourceMap/ResourcesSprite.svg';
 import toggleItemDisplay from '../../../utils/toggleItemDisplay';
 import RedactForm from '../../../data/CabinetResourceMap/RedactForm';
+import CompanyInfoLine from './CompanyInfoLine';
 
 function FullCompanyCard({ resource }: { resource: null | IResource }) {
   const [openCommentary, setOpenCommentary] = useState<string[]>([]);
@@ -100,42 +101,14 @@ function FullCompanyCard({ resource }: { resource: null | IResource }) {
         </TypographyPrimitive>
       )}
       {resource.RusProfile && (
-        <TypographyPrimitive
-          as="p"
-          color={textColors.LIGHTGOLD}
-          font={Fonts.GENERALMEDIUM}
-          fontSize={fontSizes.LARGEPLUSADAPTIVE}
-        >
-          Профиль на RusProfile:
-          <LinkPrimitive href={resource.RusProfile}>
-            <TypographyPrimitive
-              color={textColors.GOLD}
-              font={Fonts.GENERALMEDIUM}
-              fontSize={fontSizes.LARGEPLUSADAPTIVE}
-              hoverColor={hoverTextColors.LIGHTBRONZE}
-            >
-              {resource.RusProfile}
-            </TypographyPrimitive>
-          </LinkPrimitive>
-        </TypographyPrimitive>
+        <CompanyInfoLine
+          text="Профиль на RusProfile"
+          data={resource.RusProfile}
+          textColor={textColors.GOLD}
+          hoverColor={hoverTextColors.BRONZE}
+        />
       )}
-      <div className="flex flex-wrap items-center gap-2">
-        <TypographyPrimitive
-          as="h3"
-          color={textColors.LIGHTGOLD}
-          fontSize={fontSizes.LARGEPLUSADAPTIVE}
-          font={Fonts.GENERALMEDIUM}
-        >
-          Города:
-        </TypographyPrimitive>
-        {resource.city.map((city) => (
-          <div key={city} className="rounded-lg bg-lightgold p-2">
-            <TypographyPrimitive color={textColors.BLACK} font={Fonts.GENERALMEDIUM}>
-              {city}
-            </TypographyPrimitive>
-          </div>
-        ))}
-      </div>
+      <CompanyInfoLine text="Города" data={resource.city} bgColor={bgColors.LIGHTGOLD} />
       <div className="flex flex-wrap items-center gap-2">
         <TypographyPrimitive
           as="h3"
@@ -161,23 +134,12 @@ function FullCompanyCard({ resource }: { resource: null | IResource }) {
           </LinkPrimitive>
         ))}
       </div>
-      <div className="flex flex-wrap items-center gap-2">
-        <TypographyPrimitive
-          as="h3"
-          color={textColors.LIGHTGOLD}
-          fontSize={fontSizes.LARGEPLUSADAPTIVE}
-          font={Fonts.GENERALMEDIUM}
-        >
-          Формат сотрудничества:
-        </TypographyPrimitive>
-        {resource.partnershipFormat.map((format) => (
-          <div key={format} className="rounded-lg bg-lightbronze p-2">
-            <TypographyPrimitive as="p" color={textColors.LIGHTGOLD} font={Fonts.GENERALMEDIUM}>
-              {format}
-            </TypographyPrimitive>
-          </div>
-        ))}
-      </div>
+      <CompanyInfoLine
+        text="Формат сотрудничества:"
+        data={resource.partnershipFormat}
+        bgColor={bgColors.LIGHTBRONZE}
+        textColor={textColors.LIGHTGOLD}
+      />
       <TypographyPrimitive
         as="p"
         color={textColors.LIGHTGOLD}
@@ -193,179 +155,66 @@ function FullCompanyCard({ resource }: { resource: null | IResource }) {
           {resource.employeeAmount}
         </TypographyPrimitive>
       </TypographyPrimitive>
-      <div className="flex flex-wrap items-center gap-2">
-        <TypographyPrimitive
-          as="h3"
-          color={textColors.LIGHTGOLD}
-          fontSize={fontSizes.LARGEPLUSADAPTIVE}
-          font={Fonts.GENERALMEDIUM}
-        >
-          Стек технологий:
-        </TypographyPrimitive>
-        {resource.techStack.map((technology) => (
-          <div key={technology} className="rounded-lg bg-bronze p-2">
-            <TypographyPrimitive as="p" color={textColors.LIGHTGOLD} font={Fonts.GENERALMEDIUM}>
-              {technology}
-            </TypographyPrimitive>
-          </div>
-        ))}
-      </div>
-      <div className="flex flex-wrap items-center gap-2">
-        <TypographyPrimitive
-          as="h3"
-          color={textColors.LIGHTGOLD}
-          fontSize={fontSizes.LARGEPLUSADAPTIVE}
-          font={Fonts.GENERALMEDIUM}
-        >
-          Список услуг:
-        </TypographyPrimitive>
-        {resource.services.map((service) => (
-          <div key={service} className="rounded-lg bg-lightgold p-2">
-            <TypographyPrimitive as="p" font={Fonts.GENERALMEDIUM}>
-              {service}
-            </TypographyPrimitive>
-          </div>
-        ))}
-        {resource.servicesCommentary && (
-          <div
-            className={`cursor-pointer overflow-y-hidden rounded-lg bg-lightgold p-1 transition-all duration-500 hover:h-auto xl:w-[500px] ${
-              openCommentary.includes(resource?.name + 'services') ? 'max-h-[1000px]' : 'max-h-8'
-            }`}
-            onClick={() => toggleCommentaryDisplay(resource?.name + 'services')}
-          >
-            <TypographyPrimitive font={Fonts.GENERALMEDIUM}>
-              {resource.servicesCommentary}
-            </TypographyPrimitive>
-          </div>
-        )}
-      </div>
-
-      <div className="flex flex-wrap items-center gap-2">
-        <TypographyPrimitive
-          as="h3"
-          color={textColors.LIGHTGOLD}
-          fontSize={fontSizes.LARGEPLUSADAPTIVE}
-          font={Fonts.GENERALMEDIUM}
-        >
-          Доменные экспертизы:
-        </TypographyPrimitive>
-        {resource.expertise.map((expertise) => (
-          <div key={expertise} className="rounded-lg bg-lightbronze p-2">
-            <TypographyPrimitive font={Fonts.GENERALMEDIUM} color={textColors.WHITE}>
-              {expertise}
-            </TypographyPrimitive>
-          </div>
-        ))}
-        {resource.expertiseCommentary && (
-          <div
-            className={`cursor-pointer overflow-y-hidden rounded-lg bg-lightbronze p-1 transition-all duration-500 hover:h-auto xl:w-[500px] ${
-              openCommentary.includes(resource?.name + 'expertise') ? 'max-h-[1000px]' : 'max-h-8'
-            }`}
-            onClick={() => toggleCommentaryDisplay(resource?.name + 'expertise')}
-          >
-            <TypographyPrimitive font={Fonts.GENERALMEDIUM} color={textColors.WHITE}>
-              {resource.expertiseCommentary}
-            </TypographyPrimitive>
-          </div>
-        )}
-      </div>
-      <div className="flex flex-wrap items-center gap-2">
-        <TypographyPrimitive
-          as="h3"
-          color={textColors.LIGHTGOLD}
-          fontSize={fontSizes.LARGEPLUSADAPTIVE}
-          font={Fonts.GENERALMEDIUM}
-        >
-          Рынки:
-        </TypographyPrimitive>
-        {resource.markets.map((market) => (
-          <div key={market} className="rounded-lg bg-bronze p-2">
-            <TypographyPrimitive as="p" font={Fonts.GENERALMEDIUM} color={textColors.WHITE}>
-              {market}
-            </TypographyPrimitive>
-          </div>
-        ))}
-        {resource.marketsCommentary && (
-          <div
-            className={`cursor-pointer overflow-y-hidden rounded-lg bg-bronze p-1 transition-all duration-500 hover:h-auto xl:w-[500px] ${
-              openCommentary.includes(resource?.name + 'markets') ? 'max-h-[1000px]' : 'max-h-8'
-            }`}
-            onClick={() => toggleCommentaryDisplay(resource?.name + 'markets')}
-          >
-            <TypographyPrimitive font={Fonts.GENERALMEDIUM} color={textColors.WHITE}>
-              {resource.marketsCommentary}
-            </TypographyPrimitive>
-          </div>
-        )}
-      </div>
-      <div className="flex flex-wrap items-center gap-2">
-        <TypographyPrimitive
-          as="h3"
-          color={textColors.LIGHTGOLD}
-          fontSize={fontSizes.LARGEPLUSADAPTIVE}
-          font={Fonts.GENERALMEDIUM}
-        >
-          Витрина запросов:
-        </TypographyPrimitive>
-        {resource.requestShowcase && (
-          <LinkPrimitive href={resource.requestShowcase}>
-            <TypographyPrimitive
-              color={textColors.GOLD}
-              font={Fonts.GENERALMEDIUM}
-              fontSize={fontSizes.LARGEPLUSADAPTIVE}
-              hoverColor={hoverTextColors.LIGHTBRONZE}
-            >
-              {resource.requestShowcase}
-            </TypographyPrimitive>
-          </LinkPrimitive>
-        )}
-        {resource.showcaseCommentary && (
-          <div
-            className={`cursor-pointer overflow-y-hidden rounded-lg bg-lightgold p-1 transition-all duration-500 hover:h-auto xl:w-[500px] ${
-              openCommentary.includes(resource?.name + 'showcase') ? 'max-h-[1000px]' : 'max-h-8'
-            }`}
-            onClick={() => toggleCommentaryDisplay(resource?.name + 'showcase')}
-          >
-            <TypographyPrimitive font={Fonts.GENERALMEDIUM}>
-              {resource.showcaseCommentary}
-            </TypographyPrimitive>
-          </div>
-        )}
-      </div>
-      <div className="flex flex-wrap items-center gap-2">
-        <TypographyPrimitive
-          as="h3"
-          color={textColors.LIGHTGOLD}
-          fontSize={fontSizes.LARGEPLUSADAPTIVE}
-          font={Fonts.GENERALMEDIUM}
-        >
-          Бенч-карта:
-        </TypographyPrimitive>
-        {resource.benchMap && (
-          <LinkPrimitive href={resource.benchMap}>
-            <TypographyPrimitive
-              color={textColors.GOLD}
-              font={Fonts.GENERALMEDIUM}
-              fontSize={fontSizes.LARGEPLUSADAPTIVE}
-              hoverColor={hoverTextColors.LIGHTBRONZE}
-            >
-              {resource.benchMap}
-            </TypographyPrimitive>
-          </LinkPrimitive>
-        )}
-        {resource.benchMapCommentary && (
-          <div
-            className={`cursor-pointer overflow-y-hidden rounded-lg bg-lightgold p-1 transition-all duration-500 hover:h-auto xl:w-[500px] ${
-              openCommentary.includes(resource?.name + 'bench') ? 'max-h-[1000px]' : 'max-h-8'
-            }`}
-            onClick={() => toggleCommentaryDisplay(resource?.name + 'bench')}
-          >
-            <TypographyPrimitive font={Fonts.GENERALMEDIUM}>
-              {resource.benchMapCommentary}
-            </TypographyPrimitive>
-          </div>
-        )}
-      </div>
+      <CompanyInfoLine
+        text="Стек технологий"
+        data={resource.techStack}
+        bgColor={bgColors.BRONZE}
+        textColor={textColors.LIGHTGOLD}
+      />
+      <CompanyInfoLine
+        text="Список услуг:"
+        data={resource.services}
+        commentary={resource.servicesCommentary}
+        commentaryName={resource?.name + 'services'}
+        openCommentary={openCommentary}
+        toggleCommentaryDisplay={toggleCommentaryDisplay}
+        bgColor={bgColors.LIGHTGOLD}
+      />
+      <CompanyInfoLine
+        text="Доменные экспертизы:"
+        data={resource.expertise}
+        commentary={resource.expertiseCommentary}
+        commentaryName={resource?.name + 'expertise'}
+        openCommentary={openCommentary}
+        toggleCommentaryDisplay={toggleCommentaryDisplay}
+        bgColor={bgColors.LIGHTBRONZE}
+        textColor={textColors.LIGHTGOLD}
+      />
+      <CompanyInfoLine
+        text="Рынки:"
+        data={resource.markets}
+        commentary={resource.marketsCommentary}
+        commentaryName={resource?.name + 'markets'}
+        openCommentary={openCommentary}
+        toggleCommentaryDisplay={toggleCommentaryDisplay}
+        bgColor={bgColors.BRONZE}
+        textColor={textColors.LIGHTGOLD}
+      />
+      {resource.requestShowcase && (
+        <CompanyInfoLine
+          text="Витрина запросов:"
+          data={resource.requestShowcase}
+          commentary={resource.showcaseCommentary}
+          commentaryName={resource?.name + 'showcase'}
+          openCommentary={openCommentary}
+          toggleCommentaryDisplay={toggleCommentaryDisplay}
+          textColor={textColors.GOLD}
+          hoverColor={hoverTextColors.BRONZE}
+          bgColor={bgColors.LIGHTGOLD}
+        />
+      )}
+      {resource.benchMap && (
+        <CompanyInfoLine
+          text="Бенч-карта:"
+          data={resource.benchMap}
+          commentary={resource.benchMapCommentary}
+          openCommentary={openCommentary}
+          toggleCommentaryDisplay={toggleCommentaryDisplay}
+          textColor={textColors.GOLD}
+          hoverColor={hoverTextColors.BRONZE}
+          bgColor={bgColors.LIGHTBRONZE}
+        />
+      )}
       <TypographyPrimitive
         as="p"
         color={textColors.LIGHTGOLD}
