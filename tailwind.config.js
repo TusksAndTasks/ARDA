@@ -53,7 +53,9 @@ module.exports = {
         "partial-pos-xsm": "-44px -54px"
       },
       boxShadow: {
-        'strict-bronze-shadow': '5px 5px 0px -1px #894500'
+        'strict-bronze-shadow': '5px 5px 0px -1px #894500',
+        'smooth-gray-shadow': '0px 7px 6px 4px #a9a5a1bd',
+        'smooth-black-shadow': '0px 7px 6px 4px #1e1d1c33'
       }
     },
     dropShadow: {
