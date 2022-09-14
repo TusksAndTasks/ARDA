@@ -48,7 +48,7 @@ function Summary() {
             </TypographyPrimitive>
           </div>
         ))}
-        <div className={`${bgColors.BLACK} -ml-5 py-2 pl-5`}>
+        <div className={`${bgColors.BLACK} -ml-5 max-w-[600px] rounded-r py-2 pl-5`}>
           <TypographyPrimitive
             as="p"
             mode={TypographyModes.PRIMARY}
@@ -68,19 +68,21 @@ function Summary() {
         <TypographyPrimitive as="h3" mode={TypographyModes.TITULAR} fontSize={fontSizes.ULTRALARGE}>
           {SummaryData.achievementsSection.title}
         </TypographyPrimitive>
-        <div className={`${bgColors.BRONZE} -ml-5 py-2 pl-5`}>
-          {SummaryData.achievementsSection.achievements.map((achievement) => (
+        {SummaryData.achievementsSection.achievements.map((achievement) => (
+          <div
+            key={achievement.text}
+            className={`${bgColors.BRONZE} my-2 -ml-5 mr-4 max-w-[600px] rounded-r py-2 pl-5`}
+          >
             <TypographyPrimitive
               as="p"
               mode={TypographyModes.LISTLIKE}
               font={Fonts.GENERALMEDIUM}
               color={textColors.LIGHTGOLD}
-              key={achievement.text}
             >
               {achievement.text}
             </TypographyPrimitive>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
     </div>
   );
