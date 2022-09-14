@@ -24,12 +24,12 @@
 
 @layer components {
     .vertical-container-lg{
-        min-height: calc(100vh - 176px);
-        max-height: calc(100vh - 176px);
+        min-height: calc(100vh - 166px);
+        max-height: calc(100vh - 166px);
     }
 
     .vertical-container-sm{
-        min-height: calc(100vh - 200px);
+        min-height: calc(100vh - 166px);
     }
 
     .vertical-container{

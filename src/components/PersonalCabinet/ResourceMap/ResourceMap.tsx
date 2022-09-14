@@ -49,7 +49,7 @@ function ResourceMap() {
           {isFilterOpen ? 'закрыть фильтр' : 'открыть фильтр'}
         </TypographyPrimitive>
       </ButtonPrimitive>
-      <div className="custom-scrollbar-item ml-[16px] flex max-w-[90%] flex-col gap-2 overflow-y-auto py-3 pr-5 sm:ml-[48px] lg:ml-3 lg:max-w-[210px] xl:w-auto xsm:ml-[32px]">
+      <div className="custom-scrollbar-item ml-[16px] flex max-w-[90%] flex-col gap-2 overflow-y-auto py-3 pr-5 sm:ml-[48px] lg:ml-3 lg:max-w-[210px] xl:w-auto xl:max-w-[232px] xsm:ml-[32px]">
         {resourceList.map((resource) => (
           <div
             key={resource.name}

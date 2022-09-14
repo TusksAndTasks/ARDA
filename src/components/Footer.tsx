@@ -5,7 +5,7 @@ import { textColors } from '../themes/colors';
 
 function Footer() {
   return (
-    <footer className="flex h-auto items-center justify-between bg-black px-20 md:h-[124px] lg:h-auto">
+    <footer className="flex h-auto items-center justify-between bg-black py-2 px-8 md:h-[90px] md:py-1 md:px-4 lg:h-auto">
       <div className="flex w-full flex-col items-center justify-between text-center">
         <TypographyPrimitive as="p" mode={TypographyModes.PRIMARY} color={textColors.WHITE}>
           ARDA (с)
@@ -34,7 +34,7 @@ function Footer() {
           <img
             src="/logos/ITARDA-logo.png"
             alt="ARDA logo"
-            className="filter-gold ml-3.5 w-32 sm:ml-0"
+            className="filter-gold ml-8 w-24 sm:ml-0"
           />
         </div>
       </div>

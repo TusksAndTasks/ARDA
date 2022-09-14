@@ -15,7 +15,7 @@ function FullCompanyCard({ resource }: { resource: null | IResource }) {
   const toggleCommentaryDisplay = toggleItemDisplay(openCommentary, setOpenCommentary);
 
   return resource ? (
-    <div className=" border-1 custom-scrollbar-item my-8 ml-[16px] ml-2 box-border flex w-[87%] flex-col gap-3 overflow-y-auto rounded-xl border-lightgold bg-black p-2 outline outline-4 outline-offset-2 outline-black sm:ml-[48px] sm:ml-4 sm:p-4 lg:w-full lg:w-[46%] xl:ml-14 xl:w-[59%] xsm:ml-[32px]">
+    <div className=" border-1 custom-scrollbar-item my-8 ml-[16px] ml-2 box-border flex w-[87%] flex-col gap-3 overflow-y-auto rounded-xl border-lightgold bg-black p-2 outline outline-4 outline-offset-2 outline-black sm:ml-[48px] sm:ml-4 sm:p-4 lg:w-full lg:w-[46%] xl:ml-12 xl:w-[58%] xsm:ml-[32px]">
       <ResourcesSprite className="hidden" />
       <TypographyPrimitive
         as="h2"
