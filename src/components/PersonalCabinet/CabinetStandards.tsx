@@ -19,7 +19,7 @@ function CabinetStandards() {
   const [closePopup, setActivePopup, activePopupId] = usePopups();
   const [activeStandardId, setActiveStandardId] = useState<string[]>([]);
   const toggleStandardDisplay = toggleItemDisplay(activeStandardId, setActiveStandardId);
-  const activatePopup = useCallback(() => setActivePopup(popupIds.WEBINARSJOIN), []);
+  const activatePopup = useCallback(() => setActivePopup(popupIds.STANDARDSJOIN), []);
 
   return (
     <div className="ml-2.5 flex w-full flex-col">
