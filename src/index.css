@@ -30,7 +30,6 @@
 
     .vertical-container-sm{
         min-height: calc(100vh - 200px);
-        max-height: calc(100vh - 200px);
     }
 
     .vertical-container{
