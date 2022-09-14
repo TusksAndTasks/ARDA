@@ -3,42 +3,42 @@
     {
       "to": "",
       "spriteId": "Summary",
-      "informationPopUp": "after:content-['Оперативная_информация']"
+      "informationPopUp": "summary-nav"
     },
     {
       "to": "redact",
       "spriteId": "AccountSettings",
-      "informationPopUp": "after:content-['Изменить_профиль']"
+      "informationPopUp": "redactNav"
     },
     {
       "to": "standards",
       "spriteId": "Standards",
-      "informationPopUp": "after:content-['Станадрты']"
+      "informationPopUp": "standardsNav"
     },
     {
       "to": "webinars",
       "spriteId": "Webinars",
-      "informationPopUp": "after:content-['Вебинары']"
+      "informationPopUp": "webinarsNav"
     },
     {
       "to": "resources",
       "spriteId": "ResourceMap",
-      "informationPopUp": "after:content-['Ресурсная_карта']"
+      "informationPopUp": "resourcesNav"
     },
     {
       "to": "calendar",
       "spriteId": "Calendar",
-      "informationPopUp": "after:content-['Календарь']"
+      "informationPopUp": "calendarNav"
     },
     {
       "to": "exchange",
       "spriteId": "Exchange",
-      "informationPopUp": "after:content-['Обмен_лидами']"
+      "informationPopUp": "exchangeNav"
     },
     {
       "to": "additional",
       "spriteId": "Additional",
-      "informationPopUp": "after:content-['Дополнительная_информация']"
+      "informationPopUp": "additionalNav"
     }
 
   ]

@@ -8,14 +8,10 @@ import { bgColors, textColors } from '../../themes/colors';
 
 function CabinetNavigation() {
   return (
-    <div className="sticky top-0 bottom-0 z-10 flex flex-col justify-between bg-gold">
+    <div className=" sticky top-0 bottom-0 z-10 flex flex-col justify-between bg-gold">
       <CabinetNavigationSprite className="hidden" />
       {CabinetNavigationData.navigation.map((navelem) => (
-        <Link
-          to={navelem.to}
-          key={navelem.to}
-          className={`relative block after:absolute after:top-0 after:left-full after:block after:hidden after:h-full after:w-[200%] after:bg-amber-300 after:text-black ${navelem.informationPopUp} hover:after:block `}
-        >
+        <Link to={navelem.to} key={navelem.to} className={`nav relative block`}>
           <IconPrimitive
             spriteId={navelem.spriteId}
             size={squareSizes.MEDIUM}
@@ -29,4 +25,4 @@ function CabinetNavigation() {
   );
 }
 
-export default React.memo(CabinetNavigation);
+export default CabinetNavigation;
