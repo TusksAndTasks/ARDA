@@ -54,7 +54,7 @@ const ButtonStylesMap = {
   [ButtonModes.PRIMARY]:
     'button-primary px-5 py-2 block focus:outline-none border border-solid text-center overflow-hidden',
   [ButtonModes.PRIMARYVERTICAL]:
-    'button-primary max-w-full lg:max-w-[80px] lg:button-vertical pr-5 pl-1 pt-2 block focus:outline-none border border-solid text-center overflow-hidden',
+    'button-primary max-w-full lg:max-w-[80px] lg:button-vertical pr-5 pl-1 pt-2 pb-[20px] block focus:outline-none border border-solid text-center overflow-hidden',
   [ButtonModes.PRIMARYROUNDED]:
     'button-primary px-5 py-2 block focus:outline-none border border-solid text-center overflow-hidden rounded-t-lg',
   [ButtonModes.PRIMARYFULL]:

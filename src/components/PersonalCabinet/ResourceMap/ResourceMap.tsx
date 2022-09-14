@@ -26,7 +26,7 @@ function ResourceMap() {
 
   return (
     <div
-      className={`relative flex w-[80%] flex-col transition-all sm:w-full lg:flex-row  ${
+      className={`relative flex  w-full flex-col transition-all lg:flex-row  ${
         isFilterOpen ? '' : '-translate-y-[400px] lg:-translate-x-[200px] lg:-translate-y-0'
       }`}
     >
@@ -49,7 +49,7 @@ function ResourceMap() {
           {isFilterOpen ? 'закрыть фильтр' : 'открыть фильтр'}
         </TypographyPrimitive>
       </ButtonPrimitive>
-      <div className="custom-scrollbar-item ml-3 flex max-w-[90%] flex-col gap-2 overflow-y-auto py-3 pr-5  lg:w-auto">
+      <div className="custom-scrollbar-item ml-[16px] flex max-w-[90%] flex-col gap-2 overflow-y-auto py-3 pr-5 sm:ml-[48px] lg:ml-3 lg:max-w-[210px] xl:w-auto xsm:ml-[32px]">
         {resourceList.map((resource) => (
           <div
             key={resource.name}

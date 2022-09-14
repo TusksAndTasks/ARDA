@@ -20,7 +20,7 @@ function EventCalendar() {
 
   return (
     <div
-      className={`relative flex w-[80%] flex-col transition-all sm:w-full lg:flex-row  ${
+      className={`relative flex w-full flex-col transition-all lg:flex-row  ${
         isFilterOpen ? '' : '-translate-y-[400px] lg:-translate-x-[200px] lg:-translate-y-0'
       }`}
     >
@@ -42,11 +42,11 @@ function EventCalendar() {
           {isFilterOpen ? 'закрыть фильтр' : 'открыть фильтр'}
         </TypographyPrimitive>
       </ButtonPrimitive>
-      <div className="custom-scrollbar-item mt-3 flex max-w-[80%] flex-col gap-5 overflow-x-auto overflow-y-auto px-3  md:flex-row lg:mt-0 lg:max-w-full">
+      <div className="custom-scrollbar-item mt-3 flex max-w-full flex-col gap-5 overflow-x-auto overflow-y-auto px-3 md:flex-row  lg:mt-0 lg:max-w-[70%] xl:max-w-full">
         {eventYears.map((eventYear) => (
           <div
             key={eventYear.year}
-            className="mb-2 h-fit min-w-[180px] rounded-b-xl bg-bronze p-1 sm:w-[500px] sm:min-w-[280px] sm:p-4 sm:shadow-strict-bronze-shadow xsm:min-w-[280px] xsm:p-4 xsm:shadow-strict-bronze-shadow"
+            className="mb-2 h-fit min-w-[180px] rounded-b-xl bg-bronze p-1 sm:min-w-[280px] sm:max-w-[500px] sm:p-4 sm:shadow-strict-bronze-shadow xsm:min-w-[280px] xsm:p-4 xsm:shadow-strict-bronze-shadow"
           >
             <TypographyPrimitive
               as="h2"
