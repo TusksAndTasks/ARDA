@@ -1,12 +1,12 @@
-import TypographyPrimitive, { TypographyModes } from '../primitives/TypographyPrimitive';
-import JoinFormData from '../data/MainPage/JoinForm.json';
-import InputPrimitive, { InputModes } from '../primitives/InputPrimitive';
-import { inputPlaceholderFunction } from '../utils/inputPlaceholderFunction';
+import TypographyPrimitive, { TypographyModes } from '../../primitives/TypographyPrimitive';
+import JoinFormData from '../../data/MainPage/JoinForm.json';
+import InputPrimitive, { InputModes } from '../../primitives/InputPrimitive';
+import { inputPlaceholderFunction } from '../../utils/inputPlaceholderFunction';
 import React from 'react';
-import { changeRangeBackground } from '../utils/changeRangeBackground';
-import { afterBgColors, bgColors } from '../themes/colors';
-import { Fonts } from '../themes/fonts';
-import { fontSizes } from '../themes/sizes';
+import { changeRangeBackground } from '../../utils/changeRangeBackground';
+import { afterBgColors, bgColors } from '../../themes/colors';
+import { Fonts } from '../../themes/fonts';
+import { fontSizes } from '../../themes/sizes';
 
 function JoinForm({ closePopup }: { closePopup: () => void }) {
   return (
