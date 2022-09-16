@@ -6,7 +6,7 @@ import { fontSizes } from '../../themes/sizes';
 import { textColors } from '../../themes/colors';
 import { Fonts } from '../../themes/fonts';
 
-function LeadExchange() {
+function CabinetLeadExchange() {
   return (
     <div className="ml-3">
       <TypographyPrimitive as="h2" mode={TypographyModes.TITULAR} fontSize={fontSizes.ULTRALARGE}>
@@ -64,4 +64,4 @@ function LeadExchange() {
   );
 }
 
-export default React.memo(LeadExchange);
+export default React.memo(CabinetLeadExchange);

@@ -7,7 +7,7 @@ import { hoverTextColors, textColors } from '../../themes/colors';
 import { fontSizes } from '../../themes/sizes';
 import LinkPrimitive from '../../primitives/LinkPrimitive';
 
-function AdditionalInfo() {
+function CabinetAdditionalInfo() {
   const [answersOpen, setAnswersOpen] = useState<string[]>([]);
 
   const toggleAnswerDisplay = useCallback(toggleItemDisplay(answersOpen, setAnswersOpen), [
@@ -64,4 +64,4 @@ function AdditionalInfo() {
   );
 }
 
-export default React.memo(AdditionalInfo);
+export default React.memo(CabinetAdditionalInfo);

@@ -21,7 +21,7 @@ const formIdMaps = {
   password: popupIds.PASSWORDFORM,
 };
 
-function ProfileSettings() {
+function CabinetProfileSettings() {
   const [closePopup, setActivePopup, activePopupId] = usePopups();
 
   return (
@@ -77,4 +77,4 @@ function ProfileSettings() {
   );
 }
 
-export default React.memo(ProfileSettings);
+export default React.memo(CabinetProfileSettings);

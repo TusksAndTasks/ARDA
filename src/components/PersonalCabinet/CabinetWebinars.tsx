@@ -14,7 +14,7 @@ import { popupIds } from '../../redux/slices/PopupSlice';
 import toggleItemDisplay from '../../utils/toggleItemDisplay';
 import { fontSizes } from '../../themes/sizes';
 
-function Webinars() {
+function CabinetWebinars() {
   const userRole = useSelector((state: GlobalState) => state.roles.role);
   const [closePopup, setActivePopup, activePopupId] = usePopups();
   const [activeWebinarId, setActiveWebinarId] = useState<string[]>([]);
@@ -104,4 +104,4 @@ function Webinars() {
   );
 }
 
-export default React.memo(Webinars);
+export default React.memo(CabinetWebinars);

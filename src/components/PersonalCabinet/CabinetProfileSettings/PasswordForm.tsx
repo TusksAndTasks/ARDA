@@ -18,11 +18,10 @@ function PasswordForm({ password, closeForm }: { password: string; closeForm: ()
     >
       <form
         className="h-11/12 flex w-[90%] flex-col gap-5 bg-white p-10 sm:w-2/3 lg:w-1/3"
-        onClick={(e) => e.preventDefault()}
+        onClick={(e) => e.stopPropagation()}
         onSubmit={(e) => {
           e.preventDefault();
           if ((e.target as unknown as Array<HTMLInputElement>)[0].value === password) {
-            console.log('PasswordChanged');
             closeForm();
           }
         }}

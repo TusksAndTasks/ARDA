@@ -1,12 +1,12 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
-import Summary from './Summary';
-import ProfileSettings from './ProfileSettings/ProfileSettings';
-import Webinars from './Webinars';
-import ResourceMap from './ResourceMap/ResourceMap';
-import EventCalendar from './EventCalendar/EventCalendar';
-import LeadExchange from './LeadExchange';
-import AdditionalInfo from './AdditionalInfo';
+import Summary from './CabinetSummary';
+import ProfileSettings from './CabinetProfileSettings/CabinetProfileSettings';
+import Webinars from './CabinetWebinars';
+import ResourceMap from './CabinetResourceMap/CabinetResourceMap';
+import EventCalendar from './CabinetEventCalendar/CabinetEventCalendar';
+import LeadExchange from './CabinetLeadExchange';
+import AdditionalInfo from './CabinetAdditionalInfo';
 import CabinetNavigation from './CabinetNavigation';
 import CabinetStandards from './CabinetStandards';
 

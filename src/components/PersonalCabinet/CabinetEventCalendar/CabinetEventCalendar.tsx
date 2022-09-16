@@ -14,7 +14,7 @@ import LinkPrimitive from '../../../primitives/LinkPrimitive';
 import { fontSizes } from '../../../themes/sizes';
 import { Fonts } from '../../../themes/fonts';
 
-function EventCalendar() {
+function CabinetEventCalendar() {
   const eventYears = useEventYears();
   const [isFilterOpen, setIsFilterOpen] = useState(false);
 
@@ -194,4 +194,4 @@ function EventCalendar() {
   );
 }
 
-export default React.memo(EventCalendar);
+export default React.memo(CabinetEventCalendar);

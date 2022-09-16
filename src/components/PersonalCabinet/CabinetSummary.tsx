@@ -8,7 +8,7 @@ import LinkPrimitive from '../../primitives/LinkPrimitive';
 import { fontSizes } from '../../themes/sizes';
 import { Fonts } from '../../themes/fonts';
 
-function Summary() {
+function CabinetSummary() {
   return (
     <div className="ml-5 flex flex-col">
       <SummarySprite className="hidden" />
@@ -88,4 +88,4 @@ function Summary() {
   );
 }
 
-export default React.memo(Summary);
+export default React.memo(CabinetSummary);

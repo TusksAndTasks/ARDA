@@ -17,7 +17,7 @@ import { IResource } from '../../../redux/slices/ResourecesSlice';
 import FullCompanyCard from './FullCompanyCard';
 import { fontSizes } from '../../../themes/sizes';
 
-function ResourceMap() {
+function CabinetResourceMap() {
   const resourceList = useResources();
   const [isFilterOpen, setIsFilterOpen] = useState(false);
   const [fullCard, setFullCard] = useState<null | IResource>(null);
@@ -117,4 +117,4 @@ function ResourceMap() {
   );
 }
 
-export default React.memo(ResourceMap);
+export default React.memo(CabinetResourceMap);
