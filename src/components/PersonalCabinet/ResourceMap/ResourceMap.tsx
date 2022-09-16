@@ -22,8 +22,6 @@ function ResourceMap() {
   const [isFilterOpen, setIsFilterOpen] = useState(false);
   const [fullCard, setFullCard] = useState<null | IResource>(null);
 
-  console.log(resourceList);
-
   return (
     <div
       className={`relative flex  w-full flex-col transition-all lg:flex-row  ${

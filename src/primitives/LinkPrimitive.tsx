@@ -11,8 +11,11 @@ enum linkModes {
 }
 
 function LinkPrimitive({ mode = linkModes.PRIMARY, href, children }: ILinkPrimitiveProps) {
+  let formatLink = href.search(/@/) === -1 ? '' : `mailto:${href}`;
+  formatLink = href.search(/\+/) === -1 ? formatLink : `tel:${href}`;
+
   return (
-    <a className={linkStylesMap[mode]} href={href}>
+    <a className={linkStylesMap[mode]} href={formatLink}>
       {children}
     </a>
   );

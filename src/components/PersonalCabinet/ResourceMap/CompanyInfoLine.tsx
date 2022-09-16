@@ -2,12 +2,14 @@ import { bgColors, hoverTextColors, textColors } from '../../../themes/colors';
 import TypographyPrimitive from '../../../primitives/TypographyPrimitive';
 import { fontSizes } from '../../../themes/sizes';
 import { Fonts } from '../../../themes/fonts';
-import LinkPrimitive from '../../../primitives/LinkPrimitive';
 import React from 'react';
+import CompanyInfoEntry, { LineMode } from './CompanyInfoEntry';
+import CompanyInfoCommentary from './CompanyInfoCommentary';
 
 interface IInfoProps {
   text: string;
-  data: string | Array<string>;
+  data?: string | Array<string>;
+  mode: LineMode;
   textColor?: textColors;
   bgColor?: bgColors;
   hoverColor?: hoverTextColors;
@@ -19,15 +21,17 @@ interface IInfoProps {
 
 function CompanyInfoLine({
   text,
-  data,
+  data = '',
+  mode,
   textColor = textColors.BLACK,
   bgColor = bgColors.WHITE,
-  hoverColor = hoverTextColors.NONE,
   commentary,
   commentaryName = 'default',
   openCommentary,
   toggleCommentaryDisplay,
 }: IInfoProps) {
+  const standardizedData = Array.isArray(data) ? data : data.split(' ');
+
   return (
     <div className="flex flex-wrap items-center gap-2">
       <TypographyPrimitive
@@ -38,37 +42,24 @@ function CompanyInfoLine({
       >
         {text}
       </TypographyPrimitive>
-      {Array.isArray(data) ? (
-        data.map((dataEntry) => (
-          <div key={dataEntry} className={`rounded-lg ${bgColor} p-2`}>
-            <TypographyPrimitive as="p" font={Fonts.GENERALMEDIUM} color={textColor}>
-              {dataEntry}
-            </TypographyPrimitive>
-          </div>
-        ))
-      ) : (
-        <LinkPrimitive href={data}>
-          <TypographyPrimitive
-            color={textColor}
-            font={Fonts.GENERALMEDIUM}
-            fontSize={fontSizes.LARGEPLUSADAPTIVE}
-            hoverColor={hoverColor}
-          >
-            {data}
-          </TypographyPrimitive>
-        </LinkPrimitive>
-      )}
+      {standardizedData.map((entryData) => (
+        <CompanyInfoEntry
+          key={entryData}
+          entryData={entryData}
+          textColor={textColor}
+          bgColor={bgColor}
+          mode={mode}
+        />
+      ))}
       {commentary && (
-        <div
-          className={`cursor-pointer overflow-y-hidden rounded-lg ${bgColor} p-1 transition-all duration-500 hover:h-auto xl:w-[500px] ${
-            openCommentary && openCommentary.includes(commentaryName) ? 'max-h-[1000px]' : 'max-h-8'
-          }`}
-          onClick={() => toggleCommentaryDisplay && toggleCommentaryDisplay(commentaryName)}
-        >
-          <TypographyPrimitive font={Fonts.GENERALMEDIUM} color={textColor}>
-            {commentary}
-          </TypographyPrimitive>
-        </div>
+        <CompanyInfoCommentary
+          commentary={commentary}
+          commentaryName={commentaryName}
+          openCommentary={openCommentary!}
+          toggleCommentaryDisplay={toggleCommentaryDisplay!}
+          bgColor={bgColor}
+          textColor={textColor}
+        />
       )}
     </div>
   );

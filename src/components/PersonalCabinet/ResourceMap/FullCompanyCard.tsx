@@ -1,15 +1,15 @@
 import { IResource } from '../../../redux/slices/ResourecesSlice';
 import TypographyPrimitive, { TypographyModes } from '../../../primitives/TypographyPrimitive';
 import React, { useState } from 'react';
-import LinkPrimitive from '../../../primitives/LinkPrimitive';
 import { fontSizes, squareSizes } from '../../../themes/sizes';
-import { bgColors, hoverTextColors, textColors } from '../../../themes/colors';
+import { bgColors, textColors } from '../../../themes/colors';
 import { Fonts } from '../../../themes/fonts';
 import IconPrimitive from '../../../primitives/IconPrimitive';
 import { ReactComponent as ResourcesSprite } from '../../../data/CabinetResourceMap/ResourcesSprite.svg';
 import toggleItemDisplay from '../../../utils/toggleItemDisplay';
 import RedactForm from '../../../data/CabinetResourceMap/RedactForm';
 import CompanyInfoLine from './CompanyInfoLine';
+import { LineMode } from './CompanyInfoEntry';
 
 function FullCompanyCard({ resource }: { resource: null | IResource }) {
   const [openCommentary, setOpenCommentary] = useState<string[]>([]);
@@ -26,35 +26,9 @@ function FullCompanyCard({ resource }: { resource: null | IResource }) {
       >
         {resource.name}
       </TypographyPrimitive>
-      <TypographyPrimitive
-        color={textColors.LIGHTGOLD}
-        fontSize={fontSizes.LARGEPLUSADAPTIVE}
-        font={Fonts.GENERALMEDIUM}
-      >
-        Ссылка на компанию:
-        {resource.link ? (
-          <LinkPrimitive href={resource.link}>
-            <TypographyPrimitive
-              mode={TypographyModes.PRIMARYPLUS}
-              fontSize={fontSizes.LARGEPLUSADAPTIVE}
-              font={Fonts.GENERALBOLD}
-              color={textColors.GOLD}
-              hoverColor={hoverTextColors.LIGHTBRONZE}
-            >
-              {resource.link}
-            </TypographyPrimitive>
-          </LinkPrimitive>
-        ) : (
-          <TypographyPrimitive
-            mode={TypographyModes.PRIMARYPLUS}
-            fontSize={fontSizes.LARGEPLUSADAPTIVE}
-            font={Fonts.GENERALBOLD}
-            color={textColors.LIGHTBRONZE}
-          >
-            Отсутсвует
-          </TypographyPrimitive>
-        )}
-      </TypographyPrimitive>
+      {resource.link && (
+        <CompanyInfoLine text="Ссылка на компанию:" data={resource.link} mode={LineMode.LINKS} />
+      )}
       {resource.membership && (
         <div className="flex flex-wrap items-center gap-2">
           <IconPrimitive
@@ -104,66 +78,42 @@ function FullCompanyCard({ resource }: { resource: null | IResource }) {
         <CompanyInfoLine
           text="Профиль на RusProfile"
           data={resource.RusProfile}
-          textColor={textColors.GOLD}
-          hoverColor={hoverTextColors.BRONZE}
+          mode={LineMode.LINKS}
         />
       )}
-      <CompanyInfoLine text="Города" data={resource.city} bgColor={bgColors.LIGHTGOLD} />
-      <div className="flex flex-wrap items-center gap-2">
-        <TypographyPrimitive
-          as="h3"
-          color={textColors.LIGHTGOLD}
-          fontSize={fontSizes.LARGEPLUSADAPTIVE}
-          font={Fonts.GENERALMEDIUM}
-        >
-          Контакты:
-        </TypographyPrimitive>
-        {resource.contacts?.split(' ').map((link) => (
-          <LinkPrimitive
-            href={link.search(/@/) === -1 ? `tel:${link}` : `mailto:${link}`}
-            key={link}
-          >
-            <TypographyPrimitive
-              color={textColors.GOLD}
-              fontSize={fontSizes.LARGEPLUSADAPTIVE}
-              font={Fonts.GENERALMEDIUM}
-              hoverColor={hoverTextColors.LIGHTBRONZE}
-            >
-              {link}
-            </TypographyPrimitive>
-          </LinkPrimitive>
-        ))}
-      </div>
+      <CompanyInfoLine
+        text="Города"
+        data={resource.city}
+        mode={LineMode.POINTS}
+        bgColor={bgColors.LIGHTGOLD}
+      />
+      {resource.contacts && (
+        <CompanyInfoLine text="Контакты:" data={resource.contacts} mode={LineMode.LINKS} />
+      )}
       <CompanyInfoLine
         text="Формат сотрудничества:"
         data={resource.partnershipFormat}
+        mode={LineMode.POINTS}
         bgColor={bgColors.LIGHTBRONZE}
         textColor={textColors.LIGHTGOLD}
       />
-      <TypographyPrimitive
-        as="p"
-        color={textColors.LIGHTGOLD}
-        font={Fonts.GENERALMEDIUM}
-        fontSize={fontSizes.LARGEPLUSADAPTIVE}
-      >
-        Количество сотрудников:
-        <TypographyPrimitive
-          color={textColors.GOLD}
-          font={Fonts.GENERALMEDIUM}
-          fontSize={fontSizes.LARGEPLUSADAPTIVE}
-        >
-          {resource.employeeAmount}
-        </TypographyPrimitive>
-      </TypographyPrimitive>
+      <CompanyInfoLine
+        text="Количество сотрудников:"
+        data={resource.employeeAmount.toString()}
+        mode={LineMode.POINTS}
+        bgColor={bgColors.GOLD}
+      />
       <CompanyInfoLine
         text="Стек технологий"
         data={resource.techStack}
+        mode={LineMode.POINTS}
         bgColor={bgColors.BRONZE}
         textColor={textColors.LIGHTGOLD}
       />
       <CompanyInfoLine
         text="Список услуг:"
         data={resource.services}
+        mode={LineMode.POINTS}
         commentary={resource.servicesCommentary}
         commentaryName={resource?.name + 'services'}
         openCommentary={openCommentary}
@@ -173,6 +123,7 @@ function FullCompanyCard({ resource }: { resource: null | IResource }) {
       <CompanyInfoLine
         text="Доменные экспертизы:"
         data={resource.expertise}
+        mode={LineMode.LINKS}
         commentary={resource.expertiseCommentary}
         commentaryName={resource?.name + 'expertise'}
         openCommentary={openCommentary}
@@ -183,6 +134,7 @@ function FullCompanyCard({ resource }: { resource: null | IResource }) {
       <CompanyInfoLine
         text="Рынки:"
         data={resource.markets}
+        mode={LineMode.POINTS}
         commentary={resource.marketsCommentary}
         commentaryName={resource?.name + 'markets'}
         openCommentary={openCommentary}
@@ -194,12 +146,11 @@ function FullCompanyCard({ resource }: { resource: null | IResource }) {
         <CompanyInfoLine
           text="Витрина запросов:"
           data={resource.requestShowcase}
+          mode={LineMode.LINKS}
           commentary={resource.showcaseCommentary}
           commentaryName={resource?.name + 'showcase'}
           openCommentary={openCommentary}
           toggleCommentaryDisplay={toggleCommentaryDisplay}
-          textColor={textColors.GOLD}
-          hoverColor={hoverTextColors.BRONZE}
           bgColor={bgColors.LIGHTGOLD}
         />
       )}
@@ -207,11 +158,11 @@ function FullCompanyCard({ resource }: { resource: null | IResource }) {
         <CompanyInfoLine
           text="Бенч-карта:"
           data={resource.benchMap}
+          mode={LineMode.LINKS}
           commentary={resource.benchMapCommentary}
           openCommentary={openCommentary}
           toggleCommentaryDisplay={toggleCommentaryDisplay}
-          textColor={textColors.GOLD}
-          hoverColor={hoverTextColors.BRONZE}
+          textColor={textColors.LIGHTGOLD}
           bgColor={bgColors.LIGHTBRONZE}
         />
       )}
@@ -223,29 +174,13 @@ function FullCompanyCard({ resource }: { resource: null | IResource }) {
       >
         {resource.content}
       </TypographyPrimitive>
-      <div className="flex flex-wrap items-center gap-2">
-        <TypographyPrimitive
-          as="h3"
-          color={textColors.LIGHTGOLD}
-          font={Fonts.GENERALMEDIUM}
-          fontSize={fontSizes.LARGEPLUSADAPTIVE}
-        >
-          Индустриальные наработки:
-        </TypographyPrimitive>
-        {resource.groundwork &&
-          resource.groundwork.split(' ').map((link) => (
-            <LinkPrimitive key={link} href={link}>
-              <TypographyPrimitive
-                color={textColors.GOLD}
-                font={Fonts.GENERALMEDIUM}
-                fontSize={fontSizes.LARGEPLUSADAPTIVE}
-                hoverColor={hoverTextColors.LIGHTBRONZE}
-              >
-                {link}
-              </TypographyPrimitive>
-            </LinkPrimitive>
-          ))}
-      </div>
+      {resource.groundwork && (
+        <CompanyInfoLine
+          text="Индустриальные наработки:"
+          data={resource.groundwork}
+          mode={LineMode.LINKS}
+        />
+      )}
       <RedactForm />
     </div>
   ) : (
