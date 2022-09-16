@@ -1,31 +1,31 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { GlobalDispatch, GlobalState } from '../../../redux/store';
-import FiltersData from '../../../data/CabinetEventCalendar/Filters.json';
-import TypographyPrimitive, { TypographyModes } from '../../../primitives/TypographyPrimitive';
+import FiltersData from '../../../data/CabinetResourceMap/Filters.json';
 import InputPrimitive, { InputModes } from '../../../primitives/InputPrimitive';
-import { afterBgColors, bgColors } from '../../../themes/colors';
-import { inputPlaceholderFunction } from '../../../utils/inputPlaceholderFunction';
 import React from 'react';
-import { updateEventFilters } from '../../../redux/slices/CalendarSlice';
+import { inputPlaceholderFunction } from '../../../utils/inputPlaceholderFunction';
+import { updateResourceFilters } from '../../../redux/slices/ResourecesSlice';
+import TypographyPrimitive, { TypographyModes } from '../../../primitives/TypographyPrimitive';
+import { afterBgColors, bgColors } from '../../../themes/colors';
 import { fontSizes } from '../../../themes/sizes';
 
 function FiltersForm() {
-  const initialFilters = useSelector((state: GlobalState) => state.eventYears.eventFilters);
+  const initialFilters = useSelector((state: GlobalState) => state.resources.resourceFilters);
   const dispatch = useDispatch() as GlobalDispatch;
 
-  const eventFilters = Object.assign({}, initialFilters);
+  const resourceFilters = Object.assign({}, initialFilters);
 
   return (
     <form
       onSubmit={(e) => {
         e.preventDefault();
-        dispatch(updateEventFilters(eventFilters));
+        dispatch(updateResourceFilters(resourceFilters));
       }}
       className="custom-scrollbar-item relative z-10 flex h-[400px] w-[95%] flex-col items-start justify-between overflow-y-auto overflow-x-hidden bg-white py-2 pl-3 lg:h-full lg:w-[200px]"
     >
       {Object.keys(FiltersData).map((filterKey) => {
         const filterName = FiltersData[filterKey as keyof typeof FiltersData];
-        const eventKey = filterKey as keyof typeof FiltersData;
+        const resourceKey = filterKey as keyof typeof FiltersData;
         if (Array.isArray(filterName)) {
           return (
             <div key={filterKey} className="my-2 flex flex-col">
@@ -38,24 +38,24 @@ function FiltersForm() {
                 >
                   <InputPrimitive
                     type="checkbox"
-                    mode={InputModes.RADIOPRIMARY}
+                    mode={InputModes.CHECKBOXRADIOLIKE}
                     value={
-                      eventFilters[eventKey]
-                        ? (eventFilters[eventKey] as Array<string>).includes(option)
+                      resourceFilters[resourceKey]
+                        ? (resourceFilters[resourceKey] as Array<string>).includes(option)
                         : false
                     }
                     onChange={(e) => {
-                      if (!eventFilters[eventKey]) {
-                        (eventFilters[eventKey] as Array<string>) = [];
+                      if (!resourceFilters[resourceKey]) {
+                        (resourceFilters[resourceKey] as Array<string>) = [];
                       }
                       if (e.target.checked) {
-                        (eventFilters[eventKey] as Array<string>) = [
-                          ...(eventFilters[eventKey] as Array<string>),
+                        (resourceFilters[resourceKey] as Array<string>) = [
+                          ...(resourceFilters[resourceKey] as Array<string>),
                           option,
                         ];
                       } else {
-                        (eventFilters[eventKey] as Array<string>) = (
-                          eventFilters[eventKey] as Array<string>
+                        (resourceFilters[resourceKey] as Array<string>) = (
+                          resourceFilters[resourceKey] as Array<string>
                         ).filter((addedOption) => addedOption !== option);
                       }
                     }}
@@ -74,15 +74,11 @@ function FiltersForm() {
             key={filterName}
           >
             <InputPrimitive
-              type="date"
-              value={
-                eventFilters[eventKey]
-                  ? (eventFilters[eventKey] as string).split('.').reverse().join('-')
-                  : ''
-              }
+              type="checkbox"
+              mode={InputModes.CHECKBOXPRIMARY}
+              value={!!resourceFilters[resourceKey]}
               onChange={(e) => {
-                console.log(e.target.value);
-                (eventFilters[eventKey] as string) = e.target.value.split('-').reverse().join('.');
+                (resourceFilters[resourceKey] as boolean) = e.target.checked;
               }}
             />
             {filterName}
