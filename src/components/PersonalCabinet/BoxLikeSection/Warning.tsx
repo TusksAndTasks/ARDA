@@ -1,8 +1,8 @@
-import TypographyPrimitive, { TypographyModes } from '../../primitives/TypographyPrimitive';
-import ButtonPrimitive, { ButtonModes } from '../../primitives/ButtonPrimitive';
-import { afterBgColors, borderColors, hoverTextColors, textColors } from '../../themes/colors';
+import TypographyPrimitive, { TypographyModes } from '../../../primitives/TypographyPrimitive';
+import ButtonPrimitive, { ButtonModes } from '../../../primitives/ButtonPrimitive';
+import { afterBgColors, borderColors, hoverTextColors, textColors } from '../../../themes/colors';
 import React from 'react';
-import { Fonts } from '../../themes/fonts';
+import { Fonts } from '../../../themes/fonts';
 
 function Warning({
   onClick,

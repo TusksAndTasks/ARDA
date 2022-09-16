@@ -6,40 +6,40 @@
       "link":  "https://arda.digital/track-reports",
       "date": "Готово",
       "description": "Рекомендации по логированию и мониторингу времени сотрудников и оформлению клиентской отчетности",
-      "sort": "0",
-      "isActive": "true"
+      "sort": 0,
+      "isActive": true
     },
     {
       "title":  "РЕЛИЗ 2.0: РЕЗЮМЕ СОТРУДНИКОВ",
       "link":  "",
       "date": "~ 3 квартал",
       "description": "Набор лучших практик по оформлению, структуре и содержанию CV специалистов, а также ведению бенч-карт",
-      "sort": "1",
-      "isActive": "true"
+      "sort": 1,
+      "isActive": true
     },
     {
       "title":  "РЕЛИЗ 3.0: ОНБОРДИНГ И ОФБОРДИНГ",
       "link":  "",
       "date": "~ 4 квартал",
       "description": "Чек-листы и регламенты для плавного подключения к проекту на старте и последующего вывода специалиста при завершении сотрудничества",
-      "sort": "2",
-      "isActive": "true"
+      "sort": 2,
+      "isActive": true
     },
     {
       "title":  "РЕЛИЗ 4.0",
       "link":  "",
       "date": "~ 2023",
       "description": "Новая версия стандарта",
-      "sort": "3",
-      "isActive": "true"
+      "sort": 3,
+      "isActive": true
     },
     {
       "title":  "РЕЛИЗ 5.0",
       "link":  "",
       "date": "~ 2023",
       "description": "",
-      "sort": "4",
-      "isActive": "true"
+      "sort": 4,
+      "isActive": true
     }
   ],
   "warning": {

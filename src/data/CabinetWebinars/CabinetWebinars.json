@@ -6,40 +6,40 @@
       "link":  "#",
       "duration": "29:30",
       "description": "Вебинар с рандомным описанием",
-      "sort": "0",
-      "isActive": "true"
+      "sort": 0,
+      "isActive": true
     },
     {
       "title":  "Вебинар 2",
       "link":  "#",
       "duration": "15:10",
       "description": "Вебинар с рандомным описанием",
-      "sort": "1",
-      "isActive": "true"
+      "sort": 1,
+      "isActive": true
     },
     {
       "title":  "Вебинар 3",
       "link":  "#",
       "duration": "60:24",
       "description": "Вебинар с рандомным описанием",
-      "sort": "2",
-      "isActive": "true"
+      "sort": 2,
+      "isActive": true
     },
     {
       "title":  "Вебинар 4",
       "link":  "#",
       "duration": "42:42",
       "description": "",
-      "sort": "3",
-      "isActive": "true"
+      "sort": 3,
+      "isActive": true
     },
     {
       "title":  "Вебинар 5",
       "link":  "#",
       "duration": "23:23",
       "description": "Вебинар с рандомным описанием Вебинар с рандомным описанием Вебинар с рандомным описанием Вебинар с рандомным описанием Вебинар с рандомным описанием Вебинар с рандомным описанием Вебинар с рандомным описанием",
-      "sort": "4",
-      "isActive": "true"
+      "sort": 4,
+      "isActive": true
     }
   ],
   "warning": {
