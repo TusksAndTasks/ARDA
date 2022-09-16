@@ -18,13 +18,14 @@ export default function useEventYears() {
           filteredYears[yearIndex].months[monthIndex].events = month.events.filter((event) => {
             let isCorrect = false;
             (event[filterName as keyof typeof eventFilters] as Array<string>).forEach((entry) => {
-              isCorrect =
-                (eventFilters[filterName as keyof typeof eventFilters] as Array<string>).length ===
-                0
-                  ? true
-                  : (
-                      eventFilters[filterName as keyof typeof eventFilters] as Array<string>
-                    ).includes(entry);
+              isCorrect = isCorrect
+                ? isCorrect
+                : (eventFilters[filterName as keyof typeof eventFilters] as Array<string>)
+                    .length === 0
+                ? true
+                : (eventFilters[filterName as keyof typeof eventFilters] as Array<string>).includes(
+                    entry
+                  );
             });
             return isCorrect;
           });
